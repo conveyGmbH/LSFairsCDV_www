@@ -294,8 +294,9 @@
                             AppBar.busy = false;
                             // called asynchronously if an error occurs
                             // or server returns response with an error status.
-                            AppData.setErrorMsg(that.binding, errorResponse);
-                            error(errorResponse);
+                            err = errorResponse;
+                            AppData.setErrorMsg(that.binding, err);
+                            error(err);
                             return WinJS.Promise.as();
                         }, dataLogin);
                     } else {
