@@ -44,13 +44,13 @@
                 Log.ret(Log.l.trace);
                 return ret;
             },
-            deleteRecord: function (complete, error, recordId, viewResponse) {
+            deleteRecord: function (complete, error, recordId) {
                 Log.call(Log.l.trace, "Faircategory.initView.");
                 var ret = Faircategory._initView.deleteRecord(function () {
                     if (typeof complete === "function") {
                         complete();
                     }
-                }, error, recordId, viewResponse);
+                }, error, recordId);
                 Log.ret(Log.l.trace);
                 return ret;
             },

@@ -359,6 +359,9 @@
     "label.mandatory"       : "Mandatory Fields",
     "label.initvalues"      : "Base settings",
     "label.faircategory"    : "Fair categories",
+    "label.fairs"           : "Fair directory",
+    "label.companies"       : "Company Directory",
+    "label.registrations"   : "Registrations",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",

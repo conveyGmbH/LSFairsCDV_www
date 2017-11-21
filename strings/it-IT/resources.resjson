@@ -356,6 +356,9 @@
     "label.mandatory"       : "Campo obbligatorio",
     "label.initvalues"      : "Impostazioni di base",
     "label.faircategory"    : "Categorie fiere",
+    "label.fairs"           : "Directory fiere",
+    "label.companies"       : "Directory aziendale",
+    "label.registrations"   : "Registrazioni",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Annulla",

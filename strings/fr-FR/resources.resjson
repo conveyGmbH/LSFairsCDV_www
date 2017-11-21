@@ -359,6 +359,9 @@
     "label.mandatory"       : "Champs obligatoires",
     "label.initvalues"      : "Paramètres de base",
     "label.faircategory"    : "Catégories des foires",
+    "label.fairs"           : "Répertoire des foires",
+    "label.companies"       : "Répertoire de l'entreprise",
+    "label.registrations"   : "Enregistrements",
     
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Annuler",

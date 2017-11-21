@@ -361,6 +361,9 @@
     "label.mandatory"       : "Pflichtfelder",
     "label.initvalues"      : "Grundeinstellungen",
     "label.faircategory"    : "Messekategorien",
+    "label.fairs"           : "Messeverzeichnis",
+    "label.companies"       : "Firmenverzeichnis",
+    "label.registrations"   : "Registrierungen",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Abbrechen",
