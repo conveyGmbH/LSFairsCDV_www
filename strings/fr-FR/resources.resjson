@@ -357,6 +357,8 @@
     "label.mailing"         : "Mail",
     "label.infodesk"        : "Infodesk",
     "label.mandatory"       : "Champs obligatoires",
+    "label.initvalues"      : "Paramètres de base",
+    "label.faircategory"    : "Catégories des foires",
     
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Annuler",
@@ -447,5 +449,13 @@
     "mandatory.questionnaire" : "Champs obligatoires du Questionnaire",
     "mandatory.doQuestionnaireMandatory"  : "afficher message",
     "mandatory.doContactMandatory"  : "afficher message",
-    "mandatory.count"  : "Nombre"
+    "mandatory.count"  : "Nombre",
+
+    "faircategory.title"   : "Catégories des foires",
+    "faircategory.label"   : "Nom",
+    "faircategory.auma"    : "AUMA",
+    "faircategory.count"   : "Nombre",
+    "faircategory.labelDelete": "Catégorie des foires",
+    "faircategory.questionDelete": "Voulez-vous supprimer cette catégorie des foires?"
+
 }

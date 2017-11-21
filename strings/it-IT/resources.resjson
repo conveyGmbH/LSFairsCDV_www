@@ -354,6 +354,8 @@
     "label.mailing"         : "Email",
     "label.infodesk"        : "Infodesk",
     "label.mandatory"       : "Campo obbligatorio",
+    "label.initvalues"      : "Impostazioni di base",
+    "label.faircategory"    : "Categorie fiere",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Annulla",
@@ -443,5 +445,13 @@
     "mandatory.doMandatory" : "Mostra campo obbligatorio di questionario",
     "mandatory.doQuestionnaireMandatory"  : "Show message for mandatory fields in questionnaire",
     "mandatory.doContactMandatory"  : "Show message for mandatory fields in contact",
-    "mandatory.count"  : "Count"
+    "mandatory.count"  : "Count",
+
+    "faircategory.title"   : "Categorie fiere",
+    "faircategory.label"   : "Nome",
+    "faircategory.auma"    : "AUMA",
+    "faircategory.count"   : "Numero",
+    "faircategory.labelDelete": "Categoria fiera",
+    "faircategory.questionDelete": "Siete sicuri di vole cancellare questo categoria fiera?",
+
 }

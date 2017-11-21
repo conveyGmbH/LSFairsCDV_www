@@ -357,6 +357,8 @@
     "label.mailing"         : "Mail",
     "label.infodesk"        : "Infodesk",
     "label.mandatory"       : "Mandatory Fields",
+    "label.initvalues"      : "Base settings",
+    "label.faircategory"    : "Fair categories",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
@@ -442,5 +444,13 @@
     "mandatory.questionnaire" : "Mandatory fields in Questionnaire",
     "mandatory.doQuestionnaireMandatory"  : "Show message",
     "mandatory.doContactMandatory"  : "Show message",
-    "mandatory.count"  : "Count"
+    "mandatory.count"  : "Count",
+
+    "faircategory.title"   : "Fair categories",
+    "faircategory.label"   : "Name",
+    "faircategory.auma"    : "AUMA",
+    "faircategory.count"   : "Count",
+    "faircategory.labelDelete": "Fair category",
+    "faircategory.questionDelete": "Do you want to delete the current fair category?"
+
 }
