@@ -18,15 +18,15 @@
             accentColor: "#ff3c00"
         },
         showAppBkg: false,
-        logEnabled: false,
-        logLevel: 3,
+        logEnabled: true,
+        logLevel: 4,
         logGroup: false,
         logNoStack: true,
         inputBorder: 1,
         odata: {
-            https: true,
-            hostName: "leadsuccess.convey.de",
-            onlinePort: 443,
+            https: false,
+            hostName: "deimos.convey.de",
+            onlinePort: 8080,
             urlSuffix: null,
             onlinePath: "odata_online", // serviceRoot online requests
             login: "",
@@ -51,47 +51,25 @@
     // static array of menu groups for the split view pane
     Application.navigationBarGroups = [
         { id: "start", group: 1, svg: "home", disabled: true },
-        { id: "events", group: 2, svg: "question_and_answer", disabled: true },
-        { id: "mailing", group: 3, svg: "mail", disabled: true },
-        { id: "employee", group: 4, svg: "keys", disabled: true },
-        { id: "contacts", group: 5, svg: "businesspeople2", disabled: true },
-        { id: "search", group: 9, svg: "magnifying_glass", disabled: true },
-        { id: "reporting", group: 6, svg: "chart_column", disabled: true },
-        { id: "infodesk", group: 7, svg: "desk", disabled: true },
+        { id: "initvalues", group: 2, svg: "list_style_numbered", disabled: true },
+        { id: "fairs", group: 3, svg: "calendar_7", disabled: true },
+        { id: "companies", group: 4, svg: "office_building", disabled: true },
+        { id: "registrations", group: 5, svg: "user_smartphone", disabled: true },
         { id: "info", group: 8, svg: "gearwheel", disabled: true }
     ];
 
     // static array of pages for the navigation bar
     Application.navigationBarPages = [
         { id: "start", group: -1, disabled: false },
-        { id: "event", group: 2, disabled: false },
-        { id: "questiongroup", group: 2, disabled: false },
-        { id: "questionList", group: 2, disabled: false },
-        { id: "skills", group: 2, disabled: false },
-        { id: "mailing", group: -3, disabled: false },
-        { id: "employee", group: 4, disabled: false },
-        { id: "skillentry", group: 4, disabled: false },
-        { id: "contact", group: 5, disabled: false },
-        { id: "questionnaire", group: 5, disabled: false },
-        { id: "sketch", group: 5, disabled: false },
-        { id: "reporting", group: -6, disabled: false },
-        { id: "infodesk", group: -7, disabled: false },
+        { id: "faircategory", group: 2, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
-        { id: "account", group: 8, disabled: false },
-        { id: "search", group: -9, disabled: false}
+        { id: "account", group: 8, disabled: false }
     ];
 
 
     // static array of pages master/detail relations
     Application.navigationMasterDetail = [
-        { id: "contact", master: "contactList" },
-        { id: "questionnaire", master: "contactList" },
-        { id: "sketch", master: "contactList" },
-        { id: "photo", master: "contactList" },
-        { id: "employee", master: "empList" },
-        { id: "skillentry", master: "empList" },
-        { id: "infodesk", master: "infodeskEmpList" }
     ];
 
     // init page for app startup
@@ -99,24 +77,19 @@
     // home page of app
     Application.startPage = Application.getPagePath("start");
 
-    // new contact function select feature:
-    Application.prevNavigateNewId = "newContact";
     // some more default page navigation handling
     Application.navigateByIdOverride = function (id, event) {
         Log.call(Log.l.trace, "Application.", "id=" + id);
-        if (id === "events") {
-            id = "event";
-        } else if (id === "contacts") {
-            AppData.setRestriction("Kontakt", {});
-            id = "contact";
-        } else if (id === "newAccount" || id === "userinfo") {
+        if (id === "userinfo") {
             id = "account";
+        } else if (id === "initvalues") {
+            id = "faircategory";
         }
         Log.ret(Log.l.trace);
         return id;
     };
 
     // initiate the page frame class
-    var pageframe = new Application.PageFrame("LeadSuccessPortal");
+    var pageframe = new Application.PageFrame("LeadSuccessFairs");
 })();
 
