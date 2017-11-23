@@ -8,7 +8,7 @@
 /// <reference path="~/www/lib/convey/scripts/pageFrame.js" />
 /// <reference path="~/www/scripts/generalData.js" />
 
-(function() {
+(function () {
     "use strict";
 
     // default settings
@@ -62,6 +62,7 @@
     Application.navigationBarPages = [
         { id: "start", group: -1, disabled: false },
         { id: "faircategory", group: 2, disabled: false },
+        { id: "faircycle", group: 2, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
         { id: "account", group: 8, disabled: false }
@@ -92,4 +93,3 @@
     // initiate the page frame class
     var pageframe = new Application.PageFrame("LeadSuccessFairs");
 })();
-

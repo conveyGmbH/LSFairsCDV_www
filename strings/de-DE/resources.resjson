@@ -364,6 +364,8 @@
     "label.fairs"           : "Messeverzeichnis",
     "label.companies"       : "Firmenverzeichnis",
     "label.registrations"   : "Registrierungen",
+	"label.faircycle"		: "Messewiederholungszyklus",
+	
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Abbrechen",
@@ -473,6 +475,13 @@
     "faircategory.auma"    : "AUMA",
     "faircategory.count"   : "Anzahl",
     "faircategory.labelDelete": "Messekategorie",
-    "faircategory.questionDelete": "Wollen Sie diese Messekategorie löschen?"
+    "faircategory.questionDelete": "Wollen Sie diese Messekategorie löschen?",
+
+    "faircycle.title"   : "Messekategorien",
+    "faircycle.label"   : "Bezeichnung",
+    "faircycle.auma"    : "AUMA",
+    "faircycle.count"   : "Anzahl",
+    "faircycle.labelDelete": "Messewiederholungszyklus",
+    "faircycle.questionDelete": "Wollen Sie diesen Messewiederholungszyklus löschen?"
 
 }
