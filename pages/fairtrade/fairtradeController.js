@@ -14,7 +14,7 @@
         Controller: WinJS.Class.derive(Application.RecordsetController, function Controller(pageElement, commandList) {
             Log.call(Log.l.trace, "Fairtrade.Controller.");
             // ListView control
-            var listView = pageElement.querySelector("#Fairtrade.listview");
+            var listView = pageElement.querySelector("#fairtrade.listview");
 
             Application.RecordsetController.apply(this, [pageElement, {
                 count: 0
