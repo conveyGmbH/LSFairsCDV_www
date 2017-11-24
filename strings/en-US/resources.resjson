@@ -363,6 +363,7 @@
     "label.companies"       : "Company Directory",
     "label.registrations"   : "Registrations",
 	"label.faircycle"		: "Fair cycles",
+    "label.fairtrade"		: "Fair trades",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
@@ -462,5 +463,12 @@
     "faircycle.auma"    : "AUMA",
     "faircycle.count"   : "Count",
     "faircycle.labelDelete": "Fair cycle",
-    "faircycle.questionDelete": "Do you want to delete the current fair cycle?"
+    "faircycle.questionDelete": "Do you want to delete the current fair cycle?",
+
+    "fairtrade.title"   : "Fair trades",
+    "fairtrade.label"   : "Name",
+    "fairtrade.auma"    : "AUMA",
+    "fairtrade.count"   : "Count",
+    "fairtrade.labelDelete": "Fair trade",
+    "fairtrade.questionDelete": "Do you want to delete the current fair trade?"
 }
