@@ -6,19 +6,19 @@
 /// <reference path="~/www/lib/convey/scripts/appbar.js" />
 /// <reference path="~/www/lib/convey/scripts/pageController.js" />
 /// <reference path="~/www/scripts/generalData.js" />
-/// <reference path="~/www/pages/fairmandant/fairmandantService.js" />
+/// <reference path="~/www/pages/fairmantyp/fairmantypService.js" />
 
 (function () {
     "use strict";
-    WinJS.Namespace.define("Fairmandant", {
+    WinJS.Namespace.define("Fairmantyp", {
         Controller: WinJS.Class.derive(Application.RecordsetController, function Controller(pageElement, commandList) {
-            Log.call(Log.l.trace, "Fairmandant.Controller.");
+            Log.call(Log.l.trace, "Fairmantyp.Controller.");
             // ListView control
-            var listView = pageElement.querySelector("#fairmandant.listview");
+            var listView = pageElement.querySelector("#fairmantyp.listview");
 
             Application.RecordsetController.apply(this, [pageElement, {
                 count: 0
-            }, commandList, false, Fairmandant.initView, null, listView]);
+            }, commandList, false, Fairmantyp.initView, null, listView]);
 
             var that = this;
 
@@ -39,7 +39,7 @@
 
             // get field entries
             var getFieldEntries = function (index) {
-                Log.call(Log.l.trace, "Fairmandant.Controller.");
+                Log.call(Log.l.trace, "Fairmantyp.Controller.");
                 var ret = {};
                 if (listView && listView.winControl) {
                     var element = listView.winControl.elementFromIndex(index);
@@ -56,19 +56,19 @@
             // define handlers
             this.eventHandlers = {
                 clickBack: function (event) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     if (WinJS.Navigation.canGoBack === true) {
                         WinJS.Navigation.back(1).done( /* Your success and error handlers */);
                     }
                     Log.ret(Log.l.trace);
                 },
                 clickNew: function (event) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     that.insertData();
                     Log.ret(Log.l.trace);
                 },
                 clickOk: function (event) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     AppBar.busy = true;
                     that.saveData().then(function() {
                         AppBar.busy = false;
@@ -76,13 +76,13 @@
                     Log.ret(Log.l.trace);
                 },
                 clickDelete: function (event) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     var recordId = that.curRecId;
                     if (recordId) {
                         var curScope = that.scopeFromRecordId(that.curRecId);
                         if (curScope && curScope.item) {
-                            var confirmTitle = getResourceText("fairmandant.labelDelete") + ": " + curScope.item.TITLE +
-                                "\r\n" + getResourceText("fairmandant.questionDelete");
+                            var confirmTitle = getResourceText("fairmantyp.labelDelete") + ": " + curScope.item.TITLE +
+                                "\r\n" + getResourceText("fairmantyp.questionDelete");
                             confirm(confirmTitle, function (result) {
                                 if (result) {
                                     AppBar.busy = true;
@@ -97,46 +97,46 @@
                     Log.ret(Log.l.trace);
                 },
                 clickChangeUserState: function (event) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     Application.navigateById("userinfo", event);
                     Log.ret(Log.l.trace);
                 },
                 clickGotoPublish: function (event) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     Application.navigateById("publish", event);
                     Log.ret(Log.l.trace);
                 },
                 onPointerDown: function (e) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     that.cursorPos = { x: e.pageX, y: e.pageY };
                     mouseDown = true;
                     Log.ret(Log.l.trace);
                 },
                 onMouseDown: function (e) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     that.cursorPos = { x: e.pageX, y: e.pageY };
                     mouseDown = true;
                     Log.ret(Log.l.trace);
                 },
                 onPointerUp: function (e) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     mouseDown = false;
                     Log.ret(Log.l.trace);
                 },
                 onMouseUp: function (e) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     mouseDown = false;
                     Log.ret(Log.l.trace);
                 },
                 onSelectionChanged: function (eventInfo) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     that.selectionChanged().then(function() {
                         AppBar.triggerDisableHandlers();
                     });
                     Log.ret(Log.l.trace);
                 },
                 onLoadingStateChanged: function (eventInfo) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     if (listView && listView.winControl) {
                         Log.print(Log.l.trace, "loadingState=" + listView.winControl.loadingState);
                         // single list selection
@@ -158,7 +158,7 @@
                         }
                         if (listView.winControl.loadingState === "itemsLoading") {
                             if (!layout) {
-                                layout = Application.FairmandantLayout.QuestionsLayout;
+                                layout = Application.FairmantypLayout.QuestionsLayout;
                                 listView.winControl.layout = { type: layout };
                             }
                         } else if (listView.winControl.loadingState === "complete") {
@@ -178,7 +178,7 @@
                     Log.ret(Log.l.trace);
                 },
                 onHeaderVisibilityChanged: function (eventInfo) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     if (eventInfo && eventInfo.detail) {
                         var visible = eventInfo.detail.visible;
                         if (visible && listView) {
@@ -197,7 +197,7 @@
                     Log.ret(Log.l.trace);
                 },
                 onFooterVisibilityChanged: function (eventInfo) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     if (eventInfo && eventInfo.detail && listView) {
                         progress = listView.querySelector(".list-footer .progress");
                         counter = listView.querySelector(".list-footer .counter");
@@ -213,7 +213,7 @@
                             that.loadNext(function (json) {
                                 // this callback will be called asynchronously
                                 // when the response is available
-                                Log.print(Log.l.trace, "Fairmandant loadNext: success!");
+                                Log.print(Log.l.trace, "Fairmantyp loadNext: success!");
                             }, function (errorResponse) {
                                 // called asynchronously if an error occurs
                                 // or server returns response with an error status.
@@ -238,7 +238,7 @@
                     Log.ret(Log.l.trace);
                 },
                 onItemInvoked: function (eventInfo) {
-                    Log.call(Log.l.trace, "Fairmandant.Controller.");
+                    Log.call(Log.l.trace, "Fairmantyp.Controller.");
                     if (eventInfo && eventInfo.target) {
                         var comboInputFocus = eventInfo.target.querySelector(".win-dropdown:focus");
                         if (comboInputFocus) {

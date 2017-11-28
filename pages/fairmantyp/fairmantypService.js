@@ -6,7 +6,7 @@
 (function () {
     "use strict";
 
-    WinJS.Namespace.define("Fairmandant", {
+    WinJS.Namespace.define("Fairmantyp", {
         _initView: {
             get: function () {
                 return AppData.getLgntInit("LGNTINITFairManTyp");
@@ -18,17 +18,17 @@
             }
         }
     });
-    WinJS.Namespace.define("Fairmandant", {
+    WinJS.Namespace.define("Fairmantyp", {
         initView: {
             clear: function() {
-                Fairmandant._initView.clear();
+                Fairmantyp._initView.clear();
             },
             select: function (complete, error, restriction) {
                 var ret;
-                Log.call(Log.l.trace, "Fairmandant.initView.");
+                Log.call(Log.l.trace, "Fairmantyp.initView.");
                 if (typeof restriction === "number") {
                     Log.print(Log.l.trace, "calling selectById... recordId=" + restriction);
-                    ret = Fairmandant._formatView.selectById(complete, error, restriction);
+                    ret = Fairmantyp._formatView.selectById(complete, error, restriction);
                 } else {
                     // add language restriction in format view!
                     if (!restriction) {
@@ -36,7 +36,7 @@
                     }
                     restriction.LanguageSpecID = AppData.getLanguageId();
                     Log.print(Log.l.trace, "calling select... LanguageSpecID=" + restriction.LanguageSpecID);
-                    ret = Fairmandant._formatView.select(complete, error, restriction, {
+                    ret = Fairmantyp._formatView.select(complete, error, restriction, {
                         ordered: true,
                         orderAttribute: "TITLE"
                     });
@@ -45,8 +45,8 @@
                 return ret;
             },
             deleteRecord: function (complete, error, recordId) {
-                Log.call(Log.l.trace, "Fairmandant.initView.");
-                var ret = Fairmandant._initView.deleteRecord(function () {
+                Log.call(Log.l.trace, "Fairmantyp.initView.");
+                var ret = Fairmantyp._initView.deleteRecord(function () {
                     if (typeof complete === "function") {
                         complete();
                     }
@@ -55,8 +55,8 @@
                 return ret;
             },
             update: function (complete, error, recordId, viewResponse) {
-                Log.call(Log.l.trace, "Fairmandant.initView.");
-                var ret = Fairmandant._initView.update(function () {
+                Log.call(Log.l.trace, "Fairmantyp.initView.");
+                var ret = Fairmantyp._initView.update(function () {
                     if (typeof complete === "function") {
                         complete();
                     }
@@ -65,8 +65,8 @@
                 return ret;
             },
             insert: function (complete, error) {
-                Log.call(Log.l.trace, "Fairmandant.initView.");
-                var ret = Fairmandant._initView.insert(function () {
+                Log.call(Log.l.trace, "Fairmantyp.initView.");
+                var ret = Fairmantyp._initView.insert(function () {
                     if (typeof complete === "function") {
                         complete();
                     }
@@ -77,20 +77,20 @@
                 return ret;
             },
             getNextUrl: function (response) {
-                Log.call(Log.l.trace, "Fairmandant.initView.");
-                var ret = Fairmandant._formatView.getNextUrl(response);
+                Log.call(Log.l.trace, "Fairmantyp.initView.");
+                var ret = Fairmantyp._formatView.getNextUrl(response);
                 Log.ret(Log.l.trace);
                 return ret;
             },
             selectNext: function (complete, error, response, nextUrl) {
-                Log.call(Log.l.trace, "Fairmandant.initView.");
-                var ret = Fairmandant._formatView.selectNext(complete, error, response, nextUrl);
+                Log.call(Log.l.trace, "Fairmantyp.initView.");
+                var ret = Fairmantyp._formatView.selectNext(complete, error, response, nextUrl);
                 // this will return a promise to controller
                 Log.ret(Log.l.trace);
                 return ret;
             },
-            relationName: Fairmandant._initView.relationName,
-            getRecordId: Fairmandant._initView.getRecordId
+            relationName: Fairmantyp._initView.relationName,
+            getRecordId: Fairmantyp._initView.getRecordId
         }
     });
 })();

@@ -365,9 +365,10 @@
     "label.companies"       : "Firmenverzeichnis",
     "label.registrations"   : "Registrierungen",
 	"label.faircycle"		: "Messezyklen",
-    "label.fairtrade"		: "Messebranchen",
-    "label.fairdatasrc"		: "Messedatenquellen",
-    "label.fairmandant"		: "Messemandanten",
+    "label.fairtrade"		: "Branchen",
+    "label.fairdatasrc"		: "Datenquellen",
+    "label.fairmantyp"		: "Mandantentypen",
+    "label.fairmandant"		: "Firmen",
 	
 
     "flyout.ok"             : "OK",
@@ -500,10 +501,10 @@
     "fairdatasrc.labelDelete": "Messedatenquelle",
     "fairdatasrc.questionDelete": "Wollen Sie diese Messedatenquelle löschen?",
 
-    "fairmandant.title"   : "Messemandanten",
-    "fairmandant.label"   : "Bezeichnung",
-    "fairmandant.count"   : "Anzahl",
-    "fairmandant.labelDelete": "Messemandant",
-    "fairmandant.questionDelete": "Wollen Sie diesen Messemandanten löschen?"
+    "fairmantyp.title"   : "Mandantentyp",
+    "fairmantyp.label"   : "Bezeichnung",
+    "fairmantyp.count"   : "Anzahl",
+    "fairmantyp.labelDelete": "Mandantentyp",
+    "fairmantyp.questionDelete": "Wollen Sie diesen Mandantentyp löschen?"
 
 }

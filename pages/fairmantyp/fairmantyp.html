@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="fairmandant.css" rel="stylesheet" />
-    <script type="text/javascript" src="fairmandantService.js"></script>
-    <script type="text/javascript" src="fairmandantController.js"></script>
-    <script type="text/javascript" src="fairmandant.js"></script>
+    <link href="fairmantyp.css" rel="stylesheet" />
+    <script type="text/javascript" src="fairmantypService.js"></script>
+    <script type="text/javascript" src="fairmantypController.js"></script>
+    <script type="text/javascript" src="fairmantyp.js"></script>
 </head>
 <body class="win-type-body">
-    <div class="fairmandant fragment">
-        <div id="fairmandantController" class="data-container">
+    <div class="fairmantyp fragment">
+        <div id="fairmantypController" class="data-container">
             <section aria-label="Main content" role="main" class="animationElement">
                 <div class="contentarea win-type-body">
                     <div class="content-header">
@@ -17,22 +17,22 @@
                         <div class="half-circle half-circle-textcolor">&nbsp;</div>
                         <div class="content-header-line win-type-caption">
                             <span class="id-field"></span>
-                            <span class="caption-field" data-win-res="{textContent: 'fairmandant.title'}"></span>
+                            <span class="caption-field" data-win-res="{textContent: 'fairmantyp.title'}"></span>
                             <span class="date-field"></span>
                         </div>
                     </div>
-                    <div class="fairmandant-template"
+                    <div class="fairmantyp-template"
                          data-win-control="WinJS.Binding.Template" style="display: none">
-                        <div class="fairmandant-content">
+                        <div class="fairmantyp-content">
                             <div class="field_line">
                                 <span class="label landscape_only" data-win-bind="textContent: INITTitle"></span>
                                 <span class="label win-type-caption portrait_only" data-win-bind="textContent: INITTitle"></span>
                                 <input class="input_field win-textbox" type="text" data-win-bind="value: TITLE" />
                             </div>
                             <!--<div class="field_line field_line_even">
-                                <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'fairmandant.label'}"></span>
-                                <span class="label win-type-caption portrait_only_half" data-win-res="{textContent: 'fairmandant.auma'}"></span>
-                                <div class="label landscape_only"><span data-win-res="{textContent: 'fairmandant.label'}"></span> / <span data-win-res="{textContent: 'fairmandant.auma'}"></span></div>
+                                <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'fairmantyp.label'}"></span>
+                                <span class="label win-type-caption portrait_only_half" data-win-res="{textContent: 'fairmantyp.auma'}"></span>
+                                <div class="label landscape_only"><span data-win-res="{textContent: 'fairmantyp.label'}"></span> / <span data-win-res="{textContent: 'fairmantyp.auma'}"></span></div>
                                 <div class="input_group">
                                     <input class="input_half_left win-textbox" type="text" data-win-bind="value: Bezeichnung" />
                                     <input class="input_half_right win-textbox" type="text" data-win-bind="value: AUMADaten" />
@@ -45,16 +45,16 @@
                             <div class="status">
                                 <progress class="win-progress-bar progress"></progress>
                                 <div class="counter">
-                                    <span data-win-res="{textContent: 'fairmandant.count'}"></span><span>: </span><span data-win-bind="textContent: count"></span>
+                                    <span data-win-res="{textContent: 'fairmantyp.count'}"></span><span>: </span><span data-win-bind="textContent: count"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="fairmandant"
+                    <div id="fairmantyp"
                          class="listview win-selectionstylefilled"
                          data-win-control="WinJS.UI.ListView"
                          data-win-options="{
-                                itemTemplate: select('.fairmandant-template'),
+                                itemTemplate: select('.fairmantyp-template'),
                                 footer: select('.list-footer')
                          }">
                     </div>
