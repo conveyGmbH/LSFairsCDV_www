@@ -365,6 +365,7 @@
 	"label.faircycle"		: "Fair cycles",
     "label.fairtrade"		: "Fair trades",
     "label.fairdatasrc"		: "Fair data sources",
+    "label.fairmandant"		: "Fair client",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
@@ -475,8 +476,13 @@
 
     "fairdatasrc.title"   : "Fair data sources",
     "fairdatasrc.label"   : "Name",
-    "fairdatasrc.auma"    : "AUMA",
     "fairdatasrc.count"   : "Count",
     "fairdatasrc.labelDelete": "Fair data source",
-    "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?"
+    "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?",
+   
+    "fairmandant.title"   : "Fair clients",
+    "fairmandant.label"   : "Name",
+    "fairmandant.count"   : "Count",
+    "fairmandant.labelDelete": "Fair client",
+    "fairmandant.questionDelete": "Do you want to delete the current fair client?"
 }

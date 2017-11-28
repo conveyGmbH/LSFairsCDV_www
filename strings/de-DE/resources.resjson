@@ -367,6 +367,7 @@
 	"label.faircycle"		: "Messezyklen",
     "label.fairtrade"		: "Messebranchen",
     "label.fairdatasrc"		: "Messedatenquellen",
+    "label.fairmandant"		: "Messemandanten",
 	
 
     "flyout.ok"             : "OK",
@@ -495,9 +496,14 @@
 
     "fairdatasrc.title"   : "Messedatenquellen",
     "fairdatasrc.label"   : "Bezeichnung",
-    "fairdatasrc.auma"    : "AUMA",
     "fairdatasrc.count"   : "Anzahl",
     "fairdatasrc.labelDelete": "Messedatenquelle",
-    "fairdatasrc.questionDelete": "Wollen Sie diese Messedatenquelle löschen?"
+    "fairdatasrc.questionDelete": "Wollen Sie diese Messedatenquelle löschen?",
+
+    "fairmandant.title"   : "Messemandanten",
+    "fairmandant.label"   : "Bezeichnung",
+    "fairmandant.count"   : "Anzahl",
+    "fairmandant.labelDelete": "Messemandant",
+    "fairmandant.questionDelete": "Wollen Sie diesen Messemandanten löschen?"
 
 }
