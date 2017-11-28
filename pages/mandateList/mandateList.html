@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="mandateList.css" rel="stylesheet" />
+    <script type="text/javascript" src="mandateListService.js"></script>
+    <script type="text/javascript" src="mandateListController.js"></script>
+    <script type="text/javascript" src="mandateList.js"></script>
+</head>
+<body class="win-type-body">
+    <div class="mandateList fragment">
+        <div id="mandateListController" class="data-container">
+            <section aria-label="Main content" role="main" class="animationElement">
+                <div class="contentarea win-type-body">
+                    <div class="content-header">
+                        <div class="win-type-subtitle master-list-header">
+                            <span data-win-res="{textContent: 'mandateList.title'}"></span>
+                        </div>
+                    </div>
+                    <div class="headerFooterPlaceholder">
+                        <div class="list-header">
+                            <div class="list-landscape-only list-header-columns">
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.editedOn'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.company'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.name'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.firstName'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.address'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.zip'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.city'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.country'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.phone'}"></div>
+                                <!--<div class="list-field-small-relative"
+                                       data-win-res="{textContent: 'mandateList.mobile'}"></div>
+                                  <div class="list-field-small-relative"
+                                       data-win-res="{textContent: 'mandateList.email'}"></div>-->
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.ID'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.captureType'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'mandateList.editer'}"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mandateList-template"
+                         data-win-control="WinJS.Binding.Template" style="display: none">
+                        <div class="list-landscape-only">
+                            <div class="row-bkg-gray"
+                                 data-win-bind="style.display: index Binding.Converter.oddToDisplay"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Erfassungsdatum Binding.Converter.toDateString"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Firmenname"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Name"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Vorname"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Strasse"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: PLZ"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Stadt"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Land"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: TelefonFestnetz"></div>
+                            <!--<div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: TelefonMobil"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: EMail"></div>-->
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: globalContactId"></div>
+                            <!-- Spalte für Erfassungsart -->
+                            <div class="list-field-small-fixed win-type-ellipsis">
+                                <div data-win-bind="name: svgSource; style.display: svgSource Binding.Converter.toDisplay"
+                                     class="action-image"></div>
+                            </div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: mitarbeiterFullName"></div>
+                        </div>
+                        <div class="list-portrait-only">
+                            <div class="row-separator"></div>
+                            <div class="list-div-left">
+                                <div class="list-symbol-ID">
+                                    <div data-win-bind="name: svgFormOf" class="action-image"></div>
+                                    <span class="list-id-field win-type-caption">
+                                        <span data-win-bind="textContent: globalContactId"></span>
+                                    </span>
+                                </div>
+                                <div class="list-compressed">
+                                    <span class="list-compressed-title win-type-ellipsis"
+                                          data-win-bind="textContent: company"></span>
+                                    <span class="list-compressed-title win-type-subtitle win-type-ellipsis"
+                                          data-win-bind="textContent: fullName">
+                                    </span>
+                                    <div class="list-compressed-content-container">
+                                        <span class="list-compressed-content"
+                                              data-win-bind="textContent: address"></span>
+                                        <div class="list-compressed-doc-container" data-win-bind="style.display: OvwContentDOCCNT3 Binding.Converter.toDisplay">
+                                            <img class="list-compressed-doc" data-win-bind="src: OvwContentDOCCNT3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-idAndDate list-div-right win-type-caption">
+                                <span class="list-only-small-screen"
+                                      data-win-bind="textContent: Erfassungsdatum Binding.Converter.toDateString"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="headerFooterPlaceholder">
+                        <div class="list-footer">
+                            <div class="status">
+                                <progress class="win-progress-bar progress"></progress>
+                                <div class="counter">
+                                    <span data-win-res="{textContent: 'mandateList.count'}"></span><span>: </span><span data-win-bind="textContent: count"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mandateList"
+                         class="listview win-selectionstylefilled"
+                         data-win-control="WinJS.UI.ListView"
+                         data-win-options="{
+                                itemTemplate: select('.mandateList-template'),
+                                header: select('.list-header'),
+                                footer: select('.list-footer')
+                         }">
+                    </div>
+                    <div class="error-message"
+                         data-win-bind="style.display: error.displayErrorMsg; textContent: error.errorMsg"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

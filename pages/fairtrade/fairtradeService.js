@@ -1,4 +1,4 @@
-﻿// service for page: event
+﻿// service for page: fairtrade
 /// <reference path="~/www/lib/convey/scripts/strings.js" />
 /// <reference path="~/www/lib/convey/scripts/logging.js" />
 /// <reference path="~/www/lib/convey/scripts/dataService.js" />
