@@ -64,6 +64,7 @@
         { id: "faircategory", group: 2, disabled: false },
         { id: "faircycle", group: 2, disabled: false },
         { id: "fairtrade", group: 2, disabled: false },
+        { id: "fairdatasrc", group: 2, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
         { id: "account", group: 8, disabled: false }

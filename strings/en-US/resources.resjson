@@ -364,6 +364,7 @@
     "label.registrations"   : "Registrations",
 	"label.faircycle"		: "Fair cycles",
     "label.fairtrade"		: "Fair trades",
+    "label.fairdatasrc"		: "Fair data sources",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
@@ -470,5 +471,12 @@
     "fairtrade.auma"    : "AUMA",
     "fairtrade.count"   : "Count",
     "fairtrade.labelDelete": "Fair trade",
-    "fairtrade.questionDelete": "Do you want to delete the current fair trade?"
+    "fairtrade.questionDelete": "Do you want to delete the current fair trade?",
+
+    "fairdatasrc.title"   : "Fair data sources",
+    "fairdatasrc.label"   : "Name",
+    "fairdatasrc.auma"    : "AUMA",
+    "fairdatasrc.count"   : "Count",
+    "fairdatasrc.labelDelete": "Fair data source",
+    "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?"
 }

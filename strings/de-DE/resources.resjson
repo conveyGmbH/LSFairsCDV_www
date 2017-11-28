@@ -366,6 +366,7 @@
     "label.registrations"   : "Registrierungen",
 	"label.faircycle"		: "Messezyklen",
     "label.fairtrade"		: "Messebranchen",
+    "label.fairdatasrc"		: "Messedatenquellen",
 	
 
     "flyout.ok"             : "OK",
@@ -490,6 +491,13 @@
     "fairtrade.auma"    : "AUMA",
     "fairtrade.count"   : "Anzahl",
     "fairtrade.labelDelete": "Messebranche",
-    "fairtrade.questionDelete": "Wollen Sie diese Messebranche löschen?"
+    "fairtrade.questionDelete": "Wollen Sie diese Messebranche löschen?",
+
+    "fairdatasrc.title"   : "Messedatenquellen",
+    "fairdatasrc.label"   : "Bezeichnung",
+    "fairdatasrc.auma"    : "AUMA",
+    "fairdatasrc.count"   : "Anzahl",
+    "fairdatasrc.labelDelete": "Messedatenquelle",
+    "fairdatasrc.questionDelete": "Wollen Sie diese Messedatenquelle löschen?"
 
 }
