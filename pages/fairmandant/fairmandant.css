@@ -1,0 +1,48 @@
+﻿#fairmandantList .win-itemcontainer .win-itembox,
+#fairmandantList .win-listview .win-itembox {
+    background-color: transparent;
+}
+
+#fairmandantList .listview {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 56px);
+}
+
+/* Styles used for the custom layout */
+.listView .fairmandantListLayout {
+    position: static;
+}
+.listView .fairmandantListLayout .win-surface {
+    margin-left: 0;
+}
+#fairmandantList .win-container {
+    margin: 0;
+}
+/*
+#fairmandantList .win-item {
+    padding: 4px 8px;
+    width: calc(100% - 20px);
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent;
+}
+*/
+#fairmandantList .win-item {
+    width: calc(100% - 52px);
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+#fairmandantList .row-bkg{
+    display:inline-block;
+}
+
+
+.list-compressed-content-container {
+    width: 100%;
+}
+

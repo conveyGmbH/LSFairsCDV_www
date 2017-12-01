@@ -53,7 +53,7 @@
         { id: "start", group: 1, svg: "home", disabled: true },
         { id: "initvalues", group: 2, svg: "list_style_numbered", disabled: true },
         { id: "fairs", group: 3, svg: "calendar_7", disabled: true },
-        { id: "mandates", group: 4, svg: "office_building", disabled: true },
+        { id: "companies", group: 4, svg: "office_building", disabled: true },
         { id: "registrations", group: 5, svg: "user_smartphone", disabled: true },
         { id: "info", group: 8, svg: "gearwheel", disabled: true }
     ];
@@ -64,7 +64,7 @@
         { id: "faircategory", group: 2, disabled: false },
         { id: "faircycle", group: 2, disabled: false },
         { id: "fairtrade", group: 2, disabled: false },
-        { id: "mandate", group: 4, disabled: false },
+        { id: "fairmandant", group: 4, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
         { id: "account", group: 8, disabled: false }
@@ -73,7 +73,7 @@
 
     // static array of pages master/detail relations
     Application.navigationMasterDetail = [
-        { id: "mandate", master: "mandateList" }
+        { id: "fairmandant", master: "fairmandantList" }
     ];
 
     // init page for app startup
@@ -88,6 +88,8 @@
             id = "account";
         } else if (id === "initvalues") {
             id = "faircategory";
+        } else if (id === "companies") {
+            id = "fairmandant";
         }
         Log.ret(Log.l.trace);
         return id;

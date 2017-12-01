@@ -359,6 +359,11 @@
     "label.fairs"           : "Directory fiere",
     "label.companies"       : "Directory aziendale",
     "label.registrations"   : "Registrazioni",
+    "label.faircycle"		: "Cycles",
+    "label.fairtrade"		: "Trades",
+    "label.fairdatasrc"		: "Data sources",
+    "label.fairmantyp"		: "Client types",
+    "label.fairmandant"		: "Companies",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Annulla",
@@ -456,5 +461,31 @@
     "faircategory.count"   : "Numero",
     "faircategory.labelDelete": "Categoria fiera",
     "faircategory.questionDelete": "Siete sicuri di vole cancellare questo categoria fiera?",
+
+    "faircycle.title"   : "Fair cycles",
+    "faircycle.label"   : "Name",
+    "faircycle.auma"    : "AUMA",
+    "faircycle.count"   : "Count",
+    "faircycle.labelDelete": "Fair cycle",
+    "faircycle.questionDelete": "Do you want to delete the current fair cycle?",
+
+    "fairtrade.title"   : "Fair trades",
+    "fairtrade.label"   : "Name",
+    "fairtrade.auma"    : "AUMA",
+    "fairtrade.count"   : "Count",
+    "fairtrade.labelDelete": "Fair trade",
+    "fairtrade.questionDelete": "Do you want to delete the current fair trade?",
+
+    "fairdatasrc.title"   : "Fair data sources",
+    "fairdatasrc.label"   : "Name",
+    "fairdatasrc.count"   : "Count",
+    "fairdatasrc.labelDelete": "Fair data source",
+    "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?",
+   
+    "fairmandant.title"   : "Fair clients",
+    "fairmandant.label"   : "Name",
+    "fairmandant.count"   : "Count",
+    "fairmandant.labelDelete": "Fair client",
+    "fairmandant.questionDelete": "Do you want to delete the current fair client?"
 
 }

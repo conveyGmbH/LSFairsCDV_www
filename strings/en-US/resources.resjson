@@ -362,8 +362,11 @@
     "label.fairs"           : "Fair directory",
     "label.companies"       : "Company Directory",
     "label.registrations"   : "Registrations",
-	"label.faircycle"		: "Fair cycles",
-    "label.fairtrade"		: "Fair trades",
+	"label.faircycle"		: "Cycles",
+    "label.fairtrade"		: "Trades",
+    "label.fairdatasrc"		: "Data sources",
+    "label.fairmantyp"		: "Client types",
+    "label.fairmandant"		: "Companies",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
@@ -470,5 +473,17 @@
     "fairtrade.auma"    : "AUMA",
     "fairtrade.count"   : "Count",
     "fairtrade.labelDelete": "Fair trade",
-    "fairtrade.questionDelete": "Do you want to delete the current fair trade?"
+    "fairtrade.questionDelete": "Do you want to delete the current fair trade?",
+
+    "fairdatasrc.title"   : "Fair data sources",
+    "fairdatasrc.label"   : "Name",
+    "fairdatasrc.count"   : "Count",
+    "fairdatasrc.labelDelete": "Fair data source",
+    "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?",
+   
+    "fairmandant.title"   : "Fair clients",
+    "fairmandant.label"   : "Name",
+    "fairmandant.count"   : "Count",
+    "fairmandant.labelDelete": "Fair client",
+    "fairmandant.questionDelete": "Do you want to delete the current fair client?"
 }

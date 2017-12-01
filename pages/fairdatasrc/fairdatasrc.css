@@ -1,5 +1,5 @@
 ﻿/*
-#mandateList .listview .win-selectionstylefilled {
+#fairdatasrc .listview .win-selectionstylefilled {
     position: relative;
     left: 0px;
     top: 0px;
@@ -7,12 +7,17 @@
     height: 200px;
 }
 */
-#mandateList .win-itemcontainer .win-itembox,
-#mandateList .win-listview .win-itembox {
+
+#fairdatasrc .field_line {
+    border: none;
+}
+
+#fairdatasrc .win-itemcontainer .win-itembox,
+#fairdatasrc .win-listview .win-itembox {
     background-color: transparent;
 }
 
-#mandateList .listview {
+#fairdatasrc .listview {
     position: relative;
     left: 0;
     top: 0;
@@ -21,17 +26,17 @@
 }
 
 /* Styles used for the custom layout */
-.listView .mandateListLayout {
+.listView .fairdatasrcLayout {
     position: static;
 }
-.listView .mandateListLayout .win-surface {
+.listView .fairdatasrcLayout .win-surface {
     margin-left: 0;
 }
-#mandateList .win-container {
+#fairdatasrc .win-container {
     margin: 0;
 }
 /*
-#mandateList .win-item {
+#fairdatasrc .win-item {
     padding: 4px 8px;
     width: calc(100% - 20px);
     border-style: solid;
@@ -39,17 +44,14 @@
     border-color: transparent;
 }
 */
-#mandateList .win-item {
+#fairdatasrc .win-item {
     width: calc(100% - 52px);
     padding-left: 26px;
     padding-right: 26px;
     padding-top: 2px;
     padding-bottom: 2px;
 }
- #mandateList .row-bkg{
-     display:inline-block;
- }
-
+ 
 
 /*
     margins/paddings for bigger size screens 
@@ -61,24 +63,17 @@
 */
 
 /*
-.view-size-bigger #mandateList .row-bkg {
-    display: none;
-}
-.view-size-bigger #mandateList .win-container {
+.view-size-bigger #fairdatasrc .win-container {
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 16px;
 }
 */
-.view-size-bigger #mandateList .win-item {
+.view-size-bigger #fairdatasrc .win-item {
     width: calc(100% - 52px);
     padding-top: 8px;
     padding-bottom: 8px;
-}
-.view-size-bigger .action-image{
-    width: 100%;
-    float: left;
 }
 
 /*
@@ -92,7 +87,7 @@
 */
 
 
-.view-size-medium #mandateList .win-item {
+.view-size-medium #fairdatasrc .win-item {
     width: calc(100% - 36px);
     padding-left: 18px;
     padding-right: 18px;
@@ -111,27 +106,10 @@
 */
 
 
-.view-size-small #mandateList .win-item {
+.view-size-small #fairdatasrc .win-item {
     width: calc(100% - 20px);
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 4px;
     padding-bottom: 4px;
-}
-
-.list-compressed-content-container {
-    width: 100%;
-}
-
-.list-compressed-doc-container {
-    width: 150px;
-    margin-left: calc(100% - 70px);
-    margin-top: 44px;
-    display: block;
-}
-
-.list-compressed-doc {
-    width: 100%;
-    height: auto;
-    display: inline;
 }
