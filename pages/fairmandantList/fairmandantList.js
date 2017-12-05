@@ -10,7 +10,7 @@
     "use strict";
 
     WinJS.Namespace.define("Application.FairmandantListLayout", {
-        FairmandatesLayout: WinJS.Class.define(function (options) {
+        FairmandantsLayout: WinJS.Class.define(function (options) {
             this._site = null;
             this._surface = null;
         },
