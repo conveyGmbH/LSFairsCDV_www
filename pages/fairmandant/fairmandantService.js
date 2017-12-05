@@ -21,19 +21,19 @@
 
             },
             deleteRecord: function (complete, error, recordId) {
-                Log.call(Log.l.trace, "contactView.");
+                Log.call(Log.l.trace, "fairmandantView.");
                 var ret = Fairmandant._fairmandantView.deleteRecord(complete, error, recordId);
                 Log.ret(Log.l.trace);
                 return ret;
             },
             update: function (complete, error, recordId, viewResponse) {
-                Log.call(Log.l.trace, "contactView.");
+                Log.call(Log.l.trace, "fairmandantView.");
                 var ret = Fairmandant._fairmandantView.update(complete, error, recordId, viewResponse);
                 Log.ret(Log.l.trace);
                 return ret;
             },
             insert: function (complete, error, viewResponse) {
-                Log.call(Log.l.trace, "contactView.");
+                Log.call(Log.l.trace, "fairmandantView.");
                 var ret = Fairmandant._fairmandantView.insert(complete, error, viewResponse);
                 Log.ret(Log.l.trace);
                 return ret;

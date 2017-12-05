@@ -486,7 +486,7 @@
     "fairmandant.label"   : "Name",
     "fairmandant.labelDelete": "Fair client",
     "fairmandant.questionDelete": "Do you want to delete the current fair client?",
-    "fairmandant.ID"	: "ID",
+    "fairmandant.typ"	: "Type of client",
     "fairmandant.name"	: "Name",
     "fairmandant.contact"	: "Contact",
     "fairmandant.email"	: "Email",

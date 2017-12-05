@@ -385,7 +385,7 @@
                     var recordId = getRecordId();
                     if (recordId) {
                         AppBar.busy = true;
-                        ret = Fairmandant.FairmandantView.update(function (response) {
+                        ret = Fairmandant.fairmandantView.update(function (response) {
                             AppBar.busy = false;
                             // called asynchronously if ok
                             Log.print(Log.l.info, "fairmandantData update: success!");

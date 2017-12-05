@@ -490,7 +490,7 @@
     "fairmandant.label"   : "Nom",
     "fairmandant.labelDelete": "Client des foires",
     "fairmandant.questionDelete": "Voulez-vous supprimer ce client des foires?",
-    "fairmandant.ID"	: "ID",
+    "fairmandant.typ"	: "Type de client",
     "fairmandant.name"	: "Nom",
     "fairmandant.contact"	: "Référent",
     "fairmandant.email"	: "Email",

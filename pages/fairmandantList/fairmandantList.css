@@ -12,6 +12,7 @@
     background-color: transparent;
 }
 
+
 #fairmandantList .listview {
     position: relative;
     left: 0;
@@ -26,6 +27,7 @@
 }
 .listView .fairmandantListLayout .win-surface {
     margin-left: 0;
+    width: 100%;
 }
 #fairmandantList .win-container {
     margin: 0;

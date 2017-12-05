@@ -511,7 +511,7 @@
     "fairmandant.label"   : "Name",
     "fairmandant.labelDelete": "Mandant",
     "fairmandant.questionDelete": "Wollen Sie diesen Mandanten löschen?",
-    "fairmandant.ID"	: "ID",
+    "fairmandant.typ"	: "Mandantentyp",
 	"fairmandant.name"	: "Name",
     "fairmandant.contact"	: "Ansprechpartner",
     "fairmandant.email"	: "Email",
