@@ -38,8 +38,8 @@
                 var prevNotifyModified = AppBar.notifyModified;
                 AppBar.notifyModified = false;
                 that.binding.dataMandant = newDataMandant;
-                if (!that.binding.dataMandant.FairMandantVIEWID) {
-                    //TODO set ID?
+                if (that.binding.dataMandant.FairMandantVIEWID) {
+                    that.setRecordId(that.binding.dataMandant.FairMandantVIEWID);
                 }
                 AppBar.modified = false;
                 AppBar.notifyModified = prevNotifyModified;
@@ -129,7 +129,35 @@
                 },
                 clickNew: function(event){
                     Log.call(Log.l.trace, "Fairmandant.Controller.");
-                    Application.navigateById(Application.navigateNewId, event);
+                    that.saveData(function (response) {
+                        AppBar.busy = true;
+                        Log.print(Log.l.trace, "fairmandant saved");
+                        var newMandant = getEmptyDefaultValue(Fairmandant.fairmandantView.defaultValue);
+                        Fairmandant.fairmandantView.insert(function (json) {
+                            AppBar.busy = false;
+                            // this callback will be called asynchronously
+                            // when the response is available
+                            Log.print(Log.l.info, "fairmandant insert: success!");
+                            // fairmandantView returns object already parsed from json file in response
+                            if (json && json.d) {
+                                that.setDataMandant(json.d);
+                                /* Fairmandant Liste neu laden und Selektion auf neue Zeile setzen */
+                                var master = Application.navigator.masterControl;
+                                if (master && master.controller && master.controller.binding) {
+                                    master.controller.binding.fairmandantId = that.binding.dataMandant.FairMandantVIEWID;
+                                    master.controller.loadData().then(function () {
+                                        master.controller.selectRecordId(that.binding.dataMandant.FairMandantVIEWID);
+                                    });
+                                }
+                            }
+                        }, function (errorResponse) {
+                            Log.print(Log.l.error, "error inserting fairmandant");
+                            AppBar.busy = false;
+                            AppData.setErrorMsg(that.binding, errorResponse);
+                        }, newMandant);
+                    }, function (errorResponse) {
+                        Log.print(Log.l.error, "error saving fairmandant");
+                    });
                     Log.ret(Log.l.trace);
                 },
                 clickDelete: function(event){
@@ -187,11 +215,9 @@
                                 master.controller.selectRecordId(that.binding.dataMandant.FairMandantVIEWID);
                             });
                         }
-                    },
-                        function (errorResponse) {
-                            Log.print(Log.l.error, "error saving employee");
-                        });
-
+                    },  function (errorResponse) {
+                        Log.print(Log.l.error, "error saving fairmandant");
+                    });
                     AppBar.triggerDisableHandlers();
                     Log.ret(Log.l.trace);
                 },
@@ -216,11 +242,11 @@
                     }
                 },
                 clickNew: function() {
-                    /*if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID) {
+                    //if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID) {
                         return false;
-                    } else {
-                        return true;
-                    }*/
+                    //} else {
+                    //    return true;
+                    //}
                 },
                 clickDelete: function() {
                     if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID && !AppBar.busy) {
@@ -331,7 +357,6 @@
                             Log.print(Log.l.trace, "fairmandantView: success!");
                             if (json && json.d) {
                                 // now always edit!
-                                json.d.Flag_NoEdit = AppRepl.replicator && AppRepl.replicator.inFastRepl;
                                 that.setDataMandant(json.d);
                                 loadInitSelection();
                             }
@@ -380,10 +405,9 @@
                                 AppData.setErrorMsg(that.binding);
                                 Log.print(Log.l.trace, "fairmandantView: success!");
                                 if (json && json.d) {
-                                    // now always edit!
-                                    json.d.Flag_NoEdit = AppRepl.replicator && AppRepl.replicator.inFastRepl;
                                     that.setDataMandant(json.d);
                                     loadInitSelection();
+                                    //TODO: reload list entry!
                                 }
                             }, function (errorResponse) {
                                 AppData.setErrorMsg(that.binding, errorResponse);
@@ -399,10 +423,9 @@
                             // fairmandantData returns object already parsed from json file in response
                             if (json && json.d) {
                                 // now always edit!
-                                json.d.Flag_NoEdit = AppRepl.replicator && AppRepl.replicator.inFastRepl;
                                 that.setDataMandant(json.d);
                                 setRecordId(that.binding.dataMandant.FairMandantVIEWID);
-                                //TODO need substitute for AppData.getContactData(); ?
+                                //TODO: reload complete list!
                             }
                             complete(json);
                         }, function (errorResponse) {
