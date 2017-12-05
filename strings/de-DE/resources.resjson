@@ -505,6 +505,35 @@
     "fairmantyp.label"   : "Bezeichnung",
     "fairmantyp.count"   : "Anzahl",
     "fairmantyp.labelDelete": "Mandantentyp",
-    "fairmantyp.questionDelete": "Wollen Sie diesen Mandantentyp löschen?"
+    "fairmantyp.questionDelete": "Wollen Sie diesen Mandantentyp löschen?",
+	
+    "fairmandant.title"	: "Mandanten",
+    "fairmandant.label"   : "Name",
+    "fairmandant.labelDelete": "Mandant",
+    "fairmandant.questionDelete": "Wollen Sie diesen Mandanten löschen?",
+    "fairmandant.ID"	: "ID",
+	"fairmandant.name"	: "Name",
+    "fairmandant.contact"	: "Ansprechpartner",
+    "fairmandant.email"	: "Email",
+    "fairmandant.phone"	: "Telefon",
+    "fairmandant.mobile"	: "Mobil",
+    "fairmandant.fax"	: "Fax",
+    "fairmandant.address"	: "Adresse",
+    "fairmandant.zip"	: "PLZ",
+    "fairmandant.city"	: "Stadt",
+    "fairmandant.country"	: "Land",
+    "fairmandant.url"	: "Website",
+	
+    "fairmandantList.title"	: "Mandantenliste",
+    "fairmandantList.ID"	: "ID",
+    "fairmandantList.name"	: "Name",
+    "fairmandantList.email"	: "Email",
+    "fairmandantList.phone"	: "Telefon",
+    "fairmandantList.mobile"	: "Mobil",
+    "fairmandantList.address"	: "Adresse",
+    "fairmandantList.zip"	: "PLZ",
+    "fairmandantList.city"	: "Stadt",
+    "fairmandantList.country"	: "Land",
+    "fairmandantList.count"   : "Anzahl"
 
 }

@@ -484,8 +484,31 @@
    
     "fairmandant.title"   : "Fair clients",
     "fairmandant.label"   : "Name",
-    "fairmandant.count"   : "Count",
     "fairmandant.labelDelete": "Fair client",
-    "fairmandant.questionDelete": "Do you want to delete the current fair client?"
+    "fairmandant.questionDelete": "Do you want to delete the current fair client?",
+    "fairmandant.ID"	: "ID",
+    "fairmandant.name"	: "Name",
+    "fairmandant.contact"	: "Contact",
+    "fairmandant.email"	: "Email",
+    "fairmandant.phone"	: "Phone",
+    "fairmandant.mobile"	: "Mobile",
+    "fairmandant.fax"	: "Fax",
+    "fairmandant.address"	: "Address",
+    "fairmandant.zip"	: "Zip",
+    "fairmandant.city"	: "City",
+    "fairmandant.country"	: "Country",
+    "fairmandant.url"	: "Website",
+	
+    "fairmandantList.title"	: "Fair clients",
+    "fairmandantList.ID"	: "ID",
+    "fairmandantList.name"	: "Name",
+    "fairmandantList.email"	: "Email",
+    "fairmandantList.phone"	: "Phone",
+    "fairmandantList.mobile"	: "Mobile",
+    "fairmandantList.address"	: "Address",
+    "fairmandantList.zip"	: "Zip",
+    "fairmandantList.city"	: "City",
+    "fairmandantList.country"	: "Country",
+    "fairmandant.count"   : "Count"
 
 }

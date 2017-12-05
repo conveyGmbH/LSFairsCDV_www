@@ -183,7 +183,6 @@
                 var resultConverter = function (item, index) {
                     var map = AppData.initLandView.getMap();
                     var results = AppData.initLandView.getResults();
-
                     if (map && results) {
                         var curIndex = map[item.INITLandID];
                         if (typeof curIndex !== "undefined") {
@@ -193,6 +192,19 @@
                             }
                         }
                     }
+
+                    map = AppData.initFairManTypView.getMap();
+                    results = AppData.initFairManTypView.getResults();
+                    if (map && results) {
+                        var curInd = map[item.INITFairManTypID];
+                        if (typeof curInd !== "undefined") {
+                            var curInitFairManTyp = results[curInd];
+                            if (curInitFairManTyp) {
+                                item["manTyp"] = curInitFairManTyp.TITLE;
+                            }
+                        }
+                    }
+
                     item.index = index;
                     item.svgFormOf = "office_building";
                     item.address =
@@ -205,7 +217,6 @@
                                 ? (item.TelefonMobil + "\r\n")
                                 : (item.TelefonFestnetz ? (item.TelefonFestnetz + "\r\n") : "") +
                                 (item.EMail ? item.EMail : "")));
-                    //TODO set item.manTyp according to INITFairManTypID
                 }
                 this.resultConverter = resultConverter;
             

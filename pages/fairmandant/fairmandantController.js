@@ -16,16 +16,21 @@
             Log.call(Log.l.trace, "Fairmandant.Controller.");
             Application.Controller.apply(this, [pageElement, {
                 dataMandant: getEmptyDefaultValue(Fairmandant.fairmandantView.defaultValue),
-                InitLandItem: { InitLandID: 0, TITLE: "" }
+                InitLandItem: { InitLandID: 0, TITLE: "" },
+                InitFairManTypItem: { InitFairManTypID: 0, TITLE: "" }
             }, commandList]);
             var that = this;
 
             // select combo
             var initLand = pageElement.querySelector("#InitLand");
+            var initFairManTyp = pageElement.querySelector("#InitFairManTyp");
 
             this.dispose = function () {
                 if (initLand && initLand.winControl) {
                     initLand.winControl.data = null;
+                }
+                if (initFairManTyp && initFairManTyp.winControl) {
+                    initFairManTyp.winControl.data = null;
                 }
             }
 
@@ -50,6 +55,15 @@
                 AppBar.notifyModified = prevNotifyModified;
             }
             this.setInitLandItem = setInitLandItem;
+            
+            var setInitFairManTypItem = function (newInitFairManTypItem) {
+                var prevNotifyModified = AppBar.notifyModified;
+                AppBar.notifyModified = false;
+                that.binding.InitFairManTypItem = newInitFairManTypItem;
+                AppBar.modified = false;
+                AppBar.notifyModified = prevNotifyModified;
+            }
+            this.setInitFairManTypItem = setInitFairManTypItem;
 
             var getRecordId = function () {
                 Log.call(Log.l.trace, "Fairmandant.Controller.");
@@ -202,11 +216,11 @@
                     }
                 },
                 clickNew: function() {
-                    if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID) {
+                    /*if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID) {
                         return false;
                     } else {
                         return true;
-                    }
+                    }*/
                 },
                 clickDelete: function() {
                     if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID && !AppBar.busy) {
@@ -221,9 +235,20 @@
             }
 
             var loadInitSelection = function () {
-                Log.call(Log.l.trace, "Contact.Controller.");
+                Log.call(Log.l.trace, "Fairmandant.Controller.");
                 if (typeof that.binding.dataMandant.FairMandantVIEWID !== "undefined") {
                     var map, results, curIndex;
+                    if (typeof that.binding.dataMandant.INITFairManTypID !== "undefined") {
+                        Log.print(Log.l.trace, "calling select initFairManTypData: Id=" + that.binding.dataMandant.INITFairManTypID + "...");
+                        map = AppData.initFairManTypView.getMap();
+                        results = AppData.initFairManTypView.getResults();
+                        if (map && results) {
+                            curIndex = map[that.binding.dataMandant.INITFairManTypID];
+                            if (typeof curIndex !== "undefined") {
+                                that.setInitFairManTypItem(results[curIndex]);
+                            }
+                        }
+                    }
                     if (typeof that.binding.dataMandant.INITLandID !== "undefined") {
                         Log.print(Log.l.trace, "calling select initLandData: Id=" + that.binding.dataMandant.INITLandID + "...");
                         map = AppData.initLandView.getMap();
@@ -245,6 +270,32 @@
                 Log.call(Log.l.trace, "Fairmandant.Controller.");
                 AppData.setErrorMsg(that.binding);
                 var ret = new WinJS.Promise.as().then(function () {
+                    if (!AppData.initFairManTypView.getResults().length) {
+                        Log.print(Log.l.trace, "calling select initFairManTypData...");
+                        //@nedra:25.09.2015: load the list of INITFairManTyp for Combobox
+                        return AppData.initFairManTypView.select(function (json) {
+                            // this callback will be called asynchronously
+                            // when the response is available
+                            Log.print(Log.l.trace, "initFairManTypView: success!");
+                            if (json && json.d && json.d.results) {
+                                // Now, we call WinJS.Binding.List to get the bindable list
+                                if (initFairManTyp && initFairManTyp.winControl) {
+                                    initFairManTyp.winControl.data = new WinJS.Binding.List(json.d.results);
+                                }
+                            }
+                        }, function (errorResponse) {
+                            // called asynchronously if an error occurs
+                            // or server returns response with an error status.
+                            AppData.setErrorMsg(that.binding, errorResponse);
+                        });
+                    } else {
+                        if (initFairManTyp && initFairManTyp.winControl &&
+                            (!initFairManTyp.winControl.data || !initFairManTyp.winControl.data.length)) {
+                            initFairManTyp.winControl.data = new WinJS.Binding.List(AppData.initFairManTypView.getResults());
+                        }
+                        return WinJS.Promise.as();
+                    }
+                }).then(function () {
                     if (!AppData.initLandView.getResults().length) {
                         Log.print(Log.l.trace, "calling select initLandData...");
                         //@nedra:25.09.2015: load the list of INITLand for Combobox

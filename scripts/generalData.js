@@ -182,6 +182,11 @@
                 return AppData.getLgntInit("LGNTINITLand");
             }
         },
+        _initFairManTypView: {
+            get: function () {
+                return AppData.getLgntInit("LGNTINITFairManTyp");
+            }
+        },
         initAnredeView: {
             select: function (complete, error, recordId) {
                 Log.call(Log.l.trace, "AppData.initAnredeView.");
@@ -218,6 +223,26 @@
             getMap: function () {
                 Log.call(Log.l.trace, "AppData.initLandView.");
                 var ret = AppData._initLandView.map;
+                Log.ret(Log.l.trace);
+                return ret;
+            }
+        },
+        initFairManTypView: {
+            select: function (complete, error, recordId) {
+                Log.call(Log.l.trace, "AppData.initFairManTypView.");
+                var ret = AppData._initFairManTypView.select(complete, error, recordId, { ordered: true });
+                Log.ret(Log.l.trace);
+                return ret;
+            },
+            getResults: function () {
+                Log.call(Log.l.trace, "AppData.initFairManTypView.");
+                var ret = AppData._initFairManTypView.results;
+                Log.ret(Log.l.trace);
+                return ret;
+            },
+            getMap: function () {
+                Log.call(Log.l.trace, "AppData.initFairManTypView.");
+                var ret = AppData._initFairManTypView.map;
                 Log.ret(Log.l.trace);
                 return ret;
             }

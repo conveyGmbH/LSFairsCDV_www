@@ -485,11 +485,33 @@
     "fairdatasrc.count"   : "Count",
     "fairdatasrc.labelDelete": "Fair data source",
     "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?",
-   
-    "fairmandant.title"   : "Fair clients",
-    "fairmandant.label"   : "Name",
-    "fairmandant.count"   : "Count",
-    "fairmandant.labelDelete": "Fair client",
-    "fairmandant.questionDelete": "Do you want to delete the current fair client?"
-
+       
+    "fairmandant.title"   : "Clients des foires",
+    "fairmandant.label"   : "Nom",
+    "fairmandant.labelDelete": "Client des foires",
+    "fairmandant.questionDelete": "Voulez-vous supprimer ce client des foires?",
+    "fairmandant.ID"	: "ID",
+    "fairmandant.name"	: "Nom",
+    "fairmandant.contact"	: "Référent",
+    "fairmandant.email"	: "Email",
+    "fairmandant.phone"	: "Téléphone",
+    "fairmandant.mobile"	: "Mobile",
+    "fairmandant.fax"	: "Fax",
+    "fairmandant.address"	: "Adresse",
+    "fairmandant.zip"	: "Code postal",
+    "fairmandant.city"	: "Ville",
+    "fairmandant.country"	: "Pays",
+    "fairmandant.url"	: "Site web",
+	
+    "fairmandantList.title"	: "Clients des foires",
+    "fairmandantList.ID"	: "ID",
+    "fairmandantList.name"	: "Nom",
+    "fairmandantList.email"	: "Email",
+    "fairmandantList.phone"	: "Téléphone",
+    "fairmandantList.mobile"	: "Mobile",
+    "fairmandantList.address"	: "Adresse",
+    "fairmandantList.zip"	: "Code postal",
+    "fairmandantList.city"	: "Ville",
+    "fairmandantList.country"	: "Pays",
+    "fairmandant.count"   : "Nombre"
 }
