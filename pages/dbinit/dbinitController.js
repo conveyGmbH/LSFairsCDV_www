@@ -166,37 +166,6 @@
                             }
                         }
                     }).then(function () {
-                        //AppData._persistentStates.hideQuestionnaire = false;
-                        //AppData._persistentStates.hideSketch = false;
-                        if (getStartPage() === "start") {
-                            // load color settings
-                            return DBInit.CR_VERANSTOPTION_ODataView.select(function (json) {
-                                // this callback will be called asynchronously
-                                // when the response is available
-                                Log.print(Log.l.trace, "Account: success!");
-                                // CR_VERANSTOPTION_ODataView returns object already parsed from json file in response
-                                if (json && json.d && json.d.results && json.d.results.length > 1) {
-                                    var results = json.d.results;
-                                    results.forEach(function (item, index) {
-                                        that.resultConverter(item, index);
-                                    });
-                                } else {
-                                    AppData._persistentStates.individualColors = false;
-                                    AppData._persistentStates.colorSettings = copyByValue(AppData.persistentStatesDefaults.colorSettings);
-                                    var colors = new Colors.ColorsClass(AppData._persistentStates.colorSettings);
-                                }
-                            }, function (errorResponse) {
-                                // called asynchronously if an error occurs
-                                // or server returns response with an error status.
-                                AppData.setErrorMsg(that.binding, errorResponse);
-                            }).then(function () {
-                                Colors.updateColors();
-                                return WinJS.Promise.as();
-                            });
-                        } else {
-                            return WinJS.Promise.as();
-                        }
-                    }).then(function () {
                         if (getStartPage() === "start") {
                             return DBInit.appListSpecView.select(function(json) {
                                     // this callback will be called asynchronously
