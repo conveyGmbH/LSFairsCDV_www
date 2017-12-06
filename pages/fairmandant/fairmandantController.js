@@ -380,7 +380,7 @@
                 Log.call(Log.l.trace, "Fairmandant.Controller.");
                 AppData.setErrorMsg(that.binding);
                 var ret = null;
-                var dataMandant = that.binding.dataMandant;
+                var dataMandant = that.binding && that.binding.dataMandant;
                 if (dataMandant && AppBar.modified && !AppBar.busy) {
                     var recordId = getRecordId();
                     if (recordId) {

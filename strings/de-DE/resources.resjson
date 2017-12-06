@@ -369,7 +369,7 @@
     "label.fairdatasrc"		: "Datenquellen",
     "label.fairmantyp"		: "Mandantentypen",
     "label.fairmandant"		: "Firmen",
-	
+    "label.fairmanevent"	: "Veranstaltungen",	
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Abbrechen",

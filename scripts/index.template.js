@@ -64,7 +64,10 @@
         { id: "faircategory", group: 2, disabled: false },
         { id: "faircycle", group: 2, disabled: false },
         { id: "fairtrade", group: 2, disabled: false },
+        { id: "fairdatasrc", group: 2, disabled: false },
+        { id: "fairmantyp", group: 2, disabled: false },
         { id: "fairmandant", group: 4, disabled: false },
+        { id: "fairmanevent", group: 4, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
         { id: "account", group: 8, disabled: false }
@@ -73,7 +76,8 @@
 
     // static array of pages master/detail relations
     Application.navigationMasterDetail = [
-        { id: "fairmandant", master: "fairmandantList" }
+        { id: "fairmandant", master: "fairmandantList" },
+        { id: "fairmanevent", master: "fairmandantList" }
     ];
 
     // init page for app startup

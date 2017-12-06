@@ -367,6 +367,7 @@
     "label.fairdatasrc"		: "Data sources",
     "label.fairmantyp"		: "Client types",
     "label.fairmandant"		: "Companies",
+    "label.fairmanevent"	: "Events",	
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
