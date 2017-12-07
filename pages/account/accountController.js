@@ -161,87 +161,6 @@
                 }
             };
 
-            var applyColorSetting = function (colorProperty, color) {
-                Log.call(Log.l.trace, "Settings.Controller.", "colorProperty=" + colorProperty + " color=" + color);
-
-                Colors[colorProperty] = color;
-                that.binding.generalData[colorProperty] = color;
-                switch (colorProperty) {
-                    case "accentColor":
-                       /* that.createColorPicker("backgroundColor");
-                        that.createColorPicker("textColor");
-                        that.createColorPicker("labelColor");
-                        that.createColorPicker("tileTextColor");
-                        that.createColorPicker("tileBackgroundColor");
-                        that.createColorPicker("navigationColor");*/
-                        // fall through...
-                    case "navigationColor":
-                        AppBar.loadIcons();
-                        NavigationBar.groups = Application.navigationBarGroups;
-                        break;
-                }
-                Log.ret(Log.l.trace);
-            }
-            this.applyColorSetting = applyColorSetting;
-
-            var resultConverter = function (item, index) {
-                if (item.INITOptionTypeID > 10) {
-                    switch (item.INITOptionTypeID) {
-                        case 11:
-                            item.colorPickerId = "accentColor";
-                            break;
-                        case 12:
-                            item.colorPickerId = "backgroundColor";
-                            break;
-                        case 13:
-                            item.colorPickerId = "navigationColor";
-                            break;
-                        case 14:
-                            item.colorPickerId = "textColor";
-                            break;
-                        case 15:
-                            item.colorPickerId = "labelColor";
-                            break;
-                        case 16:
-                            item.colorPickerId = "tileTextColor";
-                            break;
-                        case 17:
-                            item.colorPickerId = "tileBackgroundColor";
-                            break;
-                        case 20:
-                            item.pageProperty = "questionnaire";
-                            if (item.LocalValue === "0") {
-                                AppData._persistentStates.hideQuestionnaire = true;
-                            } else {
-                                AppData._persistentStates.hideQuestionnaire = false;
-                            }
-                            break;
-                        case 21:
-                            item.pageProperty = "sketch";
-                            if (item.LocalValue === "0") {
-                                AppData._persistentStates.hideSketch = true;
-                            } else {
-                                AppData._persistentStates.hideSketch = false;
-                            }
-                            break;
-                        default:
-                            // defaultvalues
-                    }
-                    if (item.colorPickerId) {
-                        item.colorValue = "#" + item.LocalValue;
-                        that.applyColorSetting(item.colorPickerId, item.colorValue);
-                    }
-                    if (item.pageProperty) {
-                        if (item.LocalValue === "1") {
-                            NavigationBar.enablePage(item.pageProperty);
-                        } else if (item.LocalValue === "0") {
-                            NavigationBar.disablePage(item.pageProperty);
-                        }
-                    }
-                }
-            }
-            this.resultConverter = resultConverter;
-
             var openDb = function (complete, error) {
                 var ret;
                 Log.call(Log.l.info, "Account.Controller.");
@@ -487,37 +406,6 @@
                         }
                     }).then(function () {
                         if (!err) {
-                            // load color settings
-                            AppData._persistentStates.hideQuestionnaire = false;
-                            AppData._persistentStates.hideSketch = false;
-                            return Account.CR_VERANSTOPTION_ODataView.select(function (json) {
-                                // this callback will be called asynchronously
-                                // when the response is available
-                                Log.print(Log.l.trace, "Account: success!");
-                                // CR_VERANSTOPTION_ODataView returns object already parsed from json file in response
-                                if (json && json.d && json.d.results && json.d.results.length > 1) {
-                                    var results = json.d.results;
-                                    results.forEach(function(item, index) {
-                                        that.resultConverter(item, index);
-                                    });
-                                } else {
-                                    AppData._persistentStates.individualColors = false;
-                                    AppData._persistentStates.colorSettings = copyByValue(AppData.persistentStatesDefaults.colorSettings);
-                                    var colors = new Colors.ColorsClass(AppData._persistentStates.colorSettings);
-                                }
-                            }, function (errorResponse) {
-                                // called asynchronously if an error occurs
-                                // or server returns response with an error status.
-                                AppData.setErrorMsg(that.binding, errorResponse);
-                            }).then(function () {
-                                Colors.updateColors();
-                                return WinJS.Promise.as();
-                            });
-                        } else {
-                            return WinJS.Promise.as();
-                        }
-                    }).then(function () {
-                        if (!err) {
                             return Account.appListSpecView.select(function (json) {
                                 // this callback will be called asynchronously
                                 // when the response is available
@@ -545,19 +433,6 @@
                 return ret;
             };
             this.saveData = saveData;
-
-            that.processAll().then(function () {
-                AppBar.notifyModified = true;
-                Log.print(Log.l.trace, "Binding wireup page complete");
-                if (AppHeader && AppHeader.controller) {
-                    return AppHeader.controller.loadData();
-                } else {
-                    return WinJS.Promise.as();
-                }
-            }).then(function () {
-                Log.print(Log.l.trace, "Appheader refresh complete");
-                Application.pageframe.hideSplashScreen();
-            });
 
             that.processAll().then(function () {
                 Log.print(Log.l.trace, "Binding wireup page complete");
