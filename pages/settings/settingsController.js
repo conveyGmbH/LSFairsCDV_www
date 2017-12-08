@@ -35,9 +35,12 @@
                 }
             }
 
-            var createColorPicker = function (colorProperty, doRecreate) {
+            var createColorPicker = function (colorProperty) {
                 Log.call(Log.l.trace, "Settings.Controller.");
-                that.binding.generalData[colorProperty] = Colors[colorProperty];
+                if (that.binding && that.binding.generalData &&
+                    that.binding.generalData.colorSettings) {
+                    that.binding.generalData.colorSettings[colorProperty] = Colors[colorProperty];
+                }
                 var id = "#" + colorProperty + "_picker";
                 var element = pageElement.querySelector(id);
                 if (element) {
@@ -209,7 +212,6 @@
                                 });
                             }
                             that.binding.generalData.individualColors = toggle.checked;
-                            AppData._persistentStates.individualColors = toggle.checked;
                             Application.pageframe.savePersistentStates();
                         }
                     }
@@ -222,14 +224,13 @@
                         if (toggle) {
                             that.binding.generalData.showAppBkg = toggle.checked;
                             if (AppBar.notifyModified) {
-                                AppData._persistentStates.showAppBkg = that.binding.generalData.showAppBkg;
-                                Log.print(Log.l.trace, "showAppBkg=" + AppData._persistentStates.showAppBkg);
+                                Log.print(Log.l.trace, "showAppBkg=" + that.binding.generalData.showAppBkg);
                             }
                         }
                         WinJS.Promise.timeout(0).then(function () {
                             var appBkg = document.querySelector(".app-bkg");
                             if (appBkg && appBkg.style) {
-                                appBkg.style.visibility = AppData._persistentStates.showAppBkg ? "visible" : "hidden";
+                                appBkg.style.visibility = that.binding.generalData.showAppBkg ? "visible" : "hidden";
                             }
                         });
                     }
@@ -242,10 +243,9 @@
                         var range = event.currentTarget;
                         if (range) {
                             that.binding.generalData.inputBorder = range.value;
-                            AppData._persistentStates.inputBorder = range.value;
-                            Log.print(Log.l.trace, "inputBorder=" + AppData._persistentStates.inputBorder);
+                            Log.print(Log.l.trace, "inputBorder=" + range.value);
                             WinJS.Promise.timeout(0).then(function () {
-                                Colors.inputBorder = AppData._persistentStates.inputBorder;
+                                Colors.inputBorder = that.binding.generalData.inputBorder;
                             });
                         }
                     }
@@ -253,30 +253,38 @@
                 },
                 ChangeColorPicker: function (event) {
                     Log.call(Log.l.trace, "Settings.Controller.");
-                    var colorProperty = event.currentTarget.id;
-                    var pickerParent = pageElement.querySelector("#" + colorProperty + "_picker");
-                    var childElement = pageElement.querySelector("#" + colorProperty);
-                    var color = childElement.value;
-                    // HIER -> überprüfe ob Farbzahl gültig ist 
-                    // hier raus und in den resultconverter
-                    function isHexaColor(sNum) {
-                        return (typeof sNum === "string") && (sNum.length === 6 || sNum.length === 3)
-                               && !isNaN(parseInt(sNum, 16));
-                    };
-                    var colorcontainer = pickerParent.querySelector(".color_container");
-                    var colorPicker = colorcontainer.colorPicker;
-                    if (pickerParent) {
-                        if (colorcontainer) {
-                            if (colorPicker && isHexaColor(color.replace("#", ""))) {
-                                colorPicker.color = color;
+                    if (event.currentTarget) {
+                        var colorProperty = event.currentTarget.id;
+                        var childElement = pageElement.querySelector("#" + colorProperty);
+                        if (childElement) {
+                            var colorPicker = null;
+                            var color = childElement.value || "";
+                            // HIER -> überprüfe ob Farbzahl gültig ist 
+                            // hier raus und in den resultconverter
+                            function isHexaColor(sNum) {
+                                return (typeof sNum === "string") && (sNum.length === 6 || sNum.length === 3)
+                                    && !isNaN(parseInt(sNum, 16));
+                            };
+                            var pickerParent = pageElement.querySelector("#" + colorProperty + "_picker");
+                            if (pickerParent) {
+                                var colorcontainer = pickerParent.querySelector(".color_container");
+                                if (colorcontainer) {
+                                    colorPicker = colorcontainer.colorPicker;
+                                    if (colorPicker && isHexaColor(color.replace("#", ""))) {
+                                        colorPicker.color = color;
+                                    }
+                                }
+                            }
+                            if (color && isHexaColor(color.replace("#", ""))) {
+                                that.changeColorSetting(colorProperty, color);
+                            } else if (colorPicker && colorPicker.color) {
+                                that.changeColorSetting(colorProperty, colorPicker.color);
+                                if (that.binding && that.binding.generalData &&
+                                    that.binding.generalData.colorSettings) {
+                                    that.binding.generalData.colorSettings[colorProperty] = colorPicker.color;
+                                }
                             }
                         }
-                    }
-                    if (isHexaColor(color.replace("#", ""))) {
-                        that.changeColorSetting(colorProperty, color);
-                    } else {
-                        that.changeColorSetting(colorProperty, colorPicker.color);
-                        childElement.value = colorPicker.color;
                     }
                     Log.ret(Log.l.trace);
                 }

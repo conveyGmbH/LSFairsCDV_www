@@ -140,36 +140,21 @@
         },
         generalData: {
             get: function () {
-                return {
-                    setRecordId: AppData.setRecordId,
-                    getRecordId: AppData.getRecordId,
-                    setRestriction: AppData.setRestriction,
-                    getRestriction: AppData.getRestriction,
-                    individualColors: AppData._persistentStates.individualColors,
-                    isDarkTheme: AppData._persistentStates.isDarkTheme,
-                    accentColor: AppData._persistentStates.colorSettings.accentColor,
-                    backgroundColor: AppData._persistentStates.colorSettings.backgroundColor,
-                    navigationColor: AppData._persistentStates.colorSettings.navigationColor,
-                    textColor: AppData._persistentStates.colorSettings.textColor,
-                    labelColor: AppData._persistentStates.colorSettings.labelColor,
-                    tileTextColor: AppData._persistentStates.colorSettings.tileTextColor,
-                    tileBackgroundColor: AppData._persistentStates.colorSettings.tileBackgroundColor,
-                    inputBorder: AppData._persistentStates.inputBorder,
-                    showAppBkg: AppData._persistentStates.showAppBkg,
-                    logEnabled: AppData._persistentStates.logEnabled,
-                    logLevel: AppData._persistentStates.logLevel,
-                    logGroup: AppData._persistentStates.logGroup,
-                    logNoStack: AppData._persistentStates.logNoStack,
-                    logTarget: Log.targets.console,
-                    userName: AppData._userData.Login,
-                    userPresent: AppData._userData.Present,
-                    on: getResourceText("settings.on"),
-                    off: getResourceText("settings.off"),
-                    dark: getResourceText("settings.dark"),
-                    light: getResourceText("settings.light"),
-                    present: getResourceText("userinfo.present"),
-                    absend: getResourceText("userinfo.absend")
-                };
+                var data = AppData._persistentStates;
+                data.logTarget = Log.targets.console;
+                data.setRecordId = AppData.setRecordId;
+                data.getRecordId = AppData.getRecordId;
+                data.setRestriction = AppData.setRestriction;
+                data.getRestriction = AppData.getRestriction;
+                data.userName = AppData._userData.Login;
+                data.userPresent = AppData._userData.Present;
+                data.on = getResourceText("settings.on");
+                data.off = getResourceText("settings.off");
+                data.dark = getResourceText("settings.dark");
+                data.light = getResourceText("settings.light");
+                data.present = getResourceText("userinfo.present");
+                data.absend = getResourceText("userinfo.absend");
+                return data;
             }
         },
         _initAnredeView: {
