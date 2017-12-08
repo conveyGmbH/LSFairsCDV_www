@@ -368,6 +368,7 @@
     "label.fairmantyp"		: "Client types",
     "label.fairmandant"		: "Companies",
     "label.fairmanevent"	: "Events",	
+    "label.fairlocation"	: "Locations",
 
     "flyout.ok"             : "OK",
     "flyout.cancel"         : "Cancel",
@@ -509,5 +510,18 @@
     "fairmandantList.zip"	: "Zip",
     "fairmandantList.city"	: "City",
     "fairmandantList.country"	: "Country",
-    "fairmandant.count"   : "Count"
+    "fairmandant.count"   : "Count",
+
+    "fairlocation.title"   : "Locations",
+    "fairlocation.label"   : "Name",
+    "fairlocation.count"   : "Count",
+    "fairlocation.labelDelete": "Location",
+    "fairlocation.questionDelete": "Do you want to delete the current location?",
+
+    "fairmanevent.title"   : "Events",
+    "fairmanevent.startDate" : "Start date",
+    "fairmanevent.endDate" : "End date",
+    "fairmanevent.count"   : "Count",
+    "fairmanevent.labelDelete": "Event",
+    "fairmanevent.questionDelete": "Do you want to delete the current event?"
 }
