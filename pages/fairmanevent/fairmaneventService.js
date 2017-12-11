@@ -16,9 +16,6 @@
 
     WinJS.Namespace.define("Fairmanevent", {
         formatView: {
-            clear: function() {
-                Fairmanevent._formatView.clear();
-            },
             select: function (complete, error, restriction) {
                 var ret;
                 //var master = Application.navigator.masterControl;
@@ -34,11 +31,11 @@
                     if (!restriction) {
                         restriction = {};
                     }
-                    restriction.LanguageSpecID = AppData.getLanguageId();
+                    restriction.FairMandantID = AppData.getRecordId("FairMandant");
                     Log.print(Log.l.trace, "calling select... LanguageSpecID=" + restriction.LanguageSpecID);
                     ret = Fairmanevent._formatView.select(complete, error, restriction, {
                         ordered: true,
-                        orderAttribute: "TITLE"
+                        desc: true
                     });
                 }
                 Log.ret(Log.l.trace);
@@ -66,13 +63,13 @@
             },
             insert: function (complete, error) {
                 Log.call(Log.l.trace, "Fairmanevent.formatView.");
+                var newRecord = getEmptyDefaultValue(this.defaultValue);
+                newRecord.FairMandantID = AppData.getRecordId("FairMandant");
                 var ret = Fairmanevent._formatView.insert(function () {
                     if (typeof complete === "function") {
                         complete();
                     }
-                }, error, {
-                    FragengruppeID: 0
-                });
+                }, error, newRecord);
                 Log.ret(Log.l.trace);
                 return ret;
             },
@@ -90,7 +87,11 @@
                 return ret;
             },
             relationName: Fairmanevent._formatView.relationName,
-            getRecordId: Fairmanevent._formatView.getRecordId
+            getRecordId: Fairmanevent._formatView.getRecordId,
+            defaultValue: {
+                Name: "",
+                INITFairLocationID: 0
+            }
         }
     });
 })();

@@ -18,7 +18,7 @@
 
             Application.RecordsetController.apply(this, [pageElement, {
                 count: 0
-            }, commandList, false, Fairmanevent.initView, null, listView]);
+            }, commandList, false, Fairmanevent.formatView, null, listView]);
 
             var that = this;
 
@@ -37,6 +37,38 @@
 
             var mouseDown = false;
 
+            //27.12.2016 generate the string date
+            var getDateObject = function (dateData) {
+                var ret;
+                if (dateData) {
+                    var dateString = dateData.replace("\/Date(", "").replace(")\/", "");
+                    var milliseconds = parseInt(dateString) - AppData.appSettings.odata.timeZoneAdjustment * 60000;
+                    ret = new Date(milliseconds);
+                } else {
+                    ret = new Date();
+                }
+                return ret;
+            };
+            this.getDateObject = getDateObject;
+
+            //03.01.2016 convert Date() to String
+            var getDateData = function (dateObj) {
+                if (!dateObj) {
+                    dateObj = new Date();
+                }
+                var milliseconds = dateObj.getTime() + AppData.appSettings.odata.timeZoneAdjustment * 60000;
+                var dateString = milliseconds.toString();
+                return "/Date(" + dateString + ")/";
+            };
+            this.getDateData = getDateData;
+
+            var resultConverter = function (item, index) {
+                item.index = index;
+                item.dateBegin = getDateObject(item.Startdatum);
+                item.dateEnd = getDateObject(item.Enddatum);
+            }
+            this.resultConverter = resultConverter;
+
             // get field entries
             var getFieldEntries = function (index) {
                 Log.call(Log.l.trace, "Fairmanevent.Controller.");
@@ -44,8 +76,26 @@
                 if (listView && listView.winControl) {
                     var element = listView.winControl.elementFromIndex(index);
                     if (element) {
-                        var fields = element.querySelectorAll('input[type="text"]');
-                        ret["TITLE"] = fields[0].value;
+                        var fields = element.querySelectorAll('.input_field.win-textbox, .input_field.win-dropdown, .input_field.win-datepicker');
+                        if (fields && fields.length > 0) {
+                            var fieldAttribNames = [
+                                "Name",
+                                "INITFairLocationID",
+                                "Startdatum",
+                                "Enddatum"
+                            ];
+                            for (var i = 0; i < fields.length; i++) {
+                                var value = "";
+                                var className = fields[i].className;
+                                if (className.indexOf("win-datepicker") >= 0 && fields[i].winControl) {
+                                    // special handling of datepicker!
+                                    value = getDateData(fields[i].winControl.current);
+                                } else {
+                                    value = fields[i].value;
+                                }
+                                ret[fieldAttribNames[i]] = value;
+                            }
+                        }
                     }
                 }
                 Log.ret(Log.l.trace, ret);
@@ -172,6 +222,29 @@
                                     counter.style.display = "inline";
                                 }
                                 that.loading = false;
+                            }
+                            if (that.records && that.records.length > 0) {
+                                for (var i = 0; i < this.records.length; i++) {
+                                    var record = this.records.getAt(i);
+                                    if (record && typeof record === "object") {
+                                        var element = listView.winControl.elementFromIndex(i);
+                                        if (element) {
+                                            var combos = element.querySelectorAll(".win-dropdown");
+                                            if (combos && combos.length >= 1) {
+                                                var combo = combos[0];
+                                                if (combo && combo.winControl) {
+                                                    var initFairLocations = AppData.initFairLocation.getResults();
+                                                    if (initFairLocations && initFairLocations.length > 0 &&
+                                                        (!combo.winControl.data ||
+                                                         combo.winControl.data && combo.winControl.data.length !== initFairLocations.length)) {
+                                                        combo.winControl.data = new WinJS.Binding.List(initFairLocations);
+                                                        combo.value = record.INITFairLocationID;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -317,6 +390,33 @@
                 this.addRemovableEventListener(listView, "headervisibilitychanged", this.eventHandlers.onHeaderVisibilityChanged.bind(this));
                 this.addRemovableEventListener(listView, "iteminvoked", this.eventHandlers.onItemInvoked.bind(this));
             }
+
+            var baseClassLoadData = this.loadData.bind(this);
+            var loadData = function (recordId) {
+                Log.call(Log.l.trace, "Fairmanevent.Controller.", "recordId=" + recordId);
+                AppData.setErrorMsg(that.binding);
+                var ret = new WinJS.Promise.as().then(function () {
+                    if (!AppData.initFairLocation.getResults().length) {
+                        Log.print(Log.l.trace, "calling select initFairLocation...");
+                        return AppData.initFairLocation.select(function (json) {
+                            // this callback will be called asynchronously
+                            // when the response is available
+                            Log.print(Log.l.trace, "initFairLocation: success!");
+                        }, function (errorResponse) {
+                            // called asynchronously if an error occurs
+                            // or server returns response with an error status.
+                            AppData.setErrorMsg(that.binding, errorResponse);
+                        });
+                    } else {
+                        return WinJS.Promise.as();
+                    }
+                }).then(function () {
+                    return baseClassLoadData(recordId);
+                });
+                Log.ret(Log.l.trace);
+                return ret;
+            }
+            this.loadData = loadData;
 
             that.processAll().then(function() {
                 Log.print(Log.l.trace, "Binding wireup page complete");

@@ -543,7 +543,7 @@
     "fairlocation.questionDelete": "Wollen Sie diesen Ort löschen?",
 
     "fairmanevent.title"   : "Veranstaltungen",
-	"fairmanevent.startDate" : "Start Datum",
+    "fairmanevent.startDate" : "Start Datum",
 	"fairmanevent.endDate" : "End Datum",
     "fairmanevent.count"   : "Anzahl",
     "fairmanevent.labelDelete": "Veranstaltung",

@@ -25,19 +25,33 @@
                          data-win-control="WinJS.Binding.Template" style="display: none">
                         <div class="fairmanevent-content">
                             <div class="field_line field_line_odd">
-                                <span class="label landscape_only" data-win-bind="textContent: INITTitle"></span>
-                                <span class="label win-type-caption portrait_only" data-win-bind="textContent: INITTitle"></span>
-                                <input class="input_field win-textbox" type="text" data-win-bind="value: TITLE" />
+                                <span class="label landscape_only" data-win-res="{textContent: 'fairmanevent.name'}"></span>
+                                <span class="label win-type-caption portrait_only" data-win-res="{textContent: 'fairmanevent.name'}"></span>
+                                <input class="input_field win-textbox" type="text" data-win-bind="value: Name" />
                             </div>
                             <div class="field_line field_line_even">
-                                <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'fairmanevent.startDate'}"></span>
-                                <span class="label win-type-caption portrait_only_half" data-win-res="{textContent: 'fairmanevent.endDate'}"></span>
-                                <div class="label landscape_only"><span data-win-res="{textContent: 'fairmanevent.startDate'}"></span> / <span data-win-res="{textContent: 'fairmanevent.endDate'}"></span></div>
-                                <div class="input_group">
-                                    <input class="input_half_left win-textbox" type="text" data-win-bind="value: Startdatum" />
-                                    <input class="input_half_right win-textbox" type="text" data-win-bind="value: Enddatum" />
+                                <span class="label landscape_only" data-win-res="{textContent: 'fairmanevent.location'}"></span>
+                                <span class="label win-type-caption portrait_only" data-win-res="{textContent: 'fairmanevent.location'}"></span>
+                                <select class="input_field win-dropdown"
+                                        data-win-control="WinJS.UI.Repeater">
+                                    <option data-win-bind="value: INITFairLocationID; textContent: TITLE"></option>
+                                </select>
+                            </div>
+                            <div class="field_line field_line_odd">
+                                <span class="label landscape_only" data-win-res="{textContent: 'fairmanevent.startDate'}"></span>
+                                <span class="label win-type-caption portrait_only" data-win-res="{textContent: 'fairmanevent.startDate'}"></span>
+                                <div data-win-control="WinJS.UI.DatePicker" class="input_field"
+                                     data-win-bind="winControl.current: dateBegin">
+                                </div>                                    
+                            </div>
+                            <div class="field_line field_line_even">
+                                <span class="label landscape_only" data-win-res="{textContent: 'fairmanevent.endDate'}"></span>
+                                <span class="label win-type-caption portrait_only" data-win-res="{textContent: 'fairmanevent.endDate'}"></span>
+                                <div data-win-control="WinJS.UI.DatePicker" class="input_field"
+                                     data-win-bind="winControl.current: dateEnd">
                                 </div>
                             </div>
+                            <div class="line-separator"></div>
                         </div>
                     </div>
                     <div class="headerFooterPlaceholder">

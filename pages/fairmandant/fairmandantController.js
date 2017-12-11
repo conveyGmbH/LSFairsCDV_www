@@ -249,7 +249,7 @@
                     //}
                 },
                 clickDelete: function() {
-                    if (that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID && !AppBar.busy) {
+                    if (that.binding && that.binding.dataMandant && that.binding.dataMandant.FairMandantVIEWID && !AppBar.busy) {
                         return false;
                     } else {
                         return true;

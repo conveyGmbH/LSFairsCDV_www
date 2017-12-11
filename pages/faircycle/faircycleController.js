@@ -45,7 +45,11 @@
                     var element = listView.winControl.elementFromIndex(index);
                     if (element) {
                         var fields = element.querySelectorAll('input[type="text"]');
-                        ret["TITLE"] = fields[0].value;
+                        if (fields && fields.length >= 3) {
+                            ret["TITLE"] = fields[0].value;
+                            ret["ShortName"] = fields[1].value;
+                            ret["AUMADaten"] = fields[3].value;
+                        }
                     }
                 }
                 Log.ret(Log.l.trace, ret);
