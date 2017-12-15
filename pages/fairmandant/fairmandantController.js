@@ -167,7 +167,7 @@
                         if (result) {
                             Log.print(Log.l.trace,"clickDelete: user choice OK");
                             deleteData(function(response) {
-                                // delete OK - goto start
+                                // delete OK - go to start
                                 Application.navigateById("start", event);
                             }, function(errorResponse) {
                                 // delete ERROR
@@ -390,7 +390,6 @@
                             // called asynchronously if ok
                             Log.print(Log.l.info, "fairmandantData update: success!");
                             AppBar.modified = false;
-                            //TODO need substitute for AppData.getContactData(); ?
                             complete(response);
                         }, function (errorResponse) {
                             AppBar.busy = false;
@@ -407,7 +406,6 @@
                                 if (json && json.d) {
                                     that.setDataMandant(json.d);
                                     loadInitSelection();
-                                    //TODO: reload list entry!
                                 }
                             }, function (errorResponse) {
                                 AppData.setErrorMsg(that.binding, errorResponse);
@@ -425,7 +423,6 @@
                                 // now always edit!
                                 that.setDataMandant(json.d);
                                 setRecordId(that.binding.dataMandant.FairMandantVIEWID);
-                                //TODO: reload complete list!
                             }
                             complete(json);
                         }, function (errorResponse) {

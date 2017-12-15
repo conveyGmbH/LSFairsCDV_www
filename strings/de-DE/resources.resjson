@@ -368,7 +368,7 @@
     "label.fairtrade"		: "Branchen",
     "label.fairdatasrc"		: "Datenquellen",
     "label.fairmantyp"		: "Mandantentypen",
-    "label.fairmandant"		: "Firmen",
+    "label.fairmandant"		: "Firma",
     "label.fairmanevent"	: "Veranstaltungen",	
     "label.fairlocation"	: "Orte",
 
@@ -508,7 +508,7 @@
     "fairmantyp.labelDelete": "Mandantentyp",
     "fairmantyp.questionDelete": "Wollen Sie diesen Mandantentyp löschen?",
 	
-    "fairmandant.title"	: "Mandanten",
+    "fairmandant.title"	: "Mandant",
     "fairmandant.label"   : "Name",
     "fairmandant.labelDelete": "Mandant",
     "fairmandant.questionDelete": "Wollen Sie diesen Mandanten löschen?",
@@ -547,6 +547,28 @@
 	"fairmanevent.endDate" : "End Datum",
     "fairmanevent.count"   : "Anzahl",
     "fairmanevent.labelDelete": "Veranstaltung",
-    "fairmanevent.questionDelete": "Wollen Sie diese Veranstaltung löschen?"
+    "fairmanevent.questionDelete": "Wollen Sie diese Veranstaltung löschen?",
+
+	"registration.title"	: "Registrierungen",
+    "registration.company"	: "Firma",
+    "registration.name"	: "Name",
+    "registration.firstName"	: "Vorname",
+    "registration.address"	: "Straße",
+    "registration.zip"	: "PLZ",
+    "registration.city"	: "Stadt",
+    "registration.country"	: "Land",
+    "registration.phone"	: "Telefon",
+    "registration.email"	: "Email",
+    "registration.fair"	: "Messe",
+    "registration.activated"	: "Freischaltung",
+    "registration.empID"	: "MitarbeiterID",
+    "registration.capturedOn"	: "Erfasst am",
+    "registration.password"	: "Passwort",
+    "registration.message"	: "Nachricht",
+    "registration.captState"	: "Erfassungsstatus",
+    "registration.codeNr"	: "Code Nr",
+    "registration.Newsletter"	: "Newsletter",
+    "registration.confirmed"	: "Registrierung bestätigt",
+    "registration.lastLogin"	: "Zuletzt angemeldet"
 
 }

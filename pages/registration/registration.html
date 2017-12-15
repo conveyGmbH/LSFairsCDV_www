@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="registration.css" rel="stylesheet" />
+    <script type="text/javascript" src="registrationService.js"></script>
+    <script type="text/javascript" src="registrationController.js"></script>
+    <script type="text/javascript" src="registration.js"></script>
+</head>
+<body class="win-type-body">
+    <div class="registration fragment">
+        <div id="registrationController" class="data-container">
+            <section aria-label="Main content" role="main" class="animationElement">
+                <div class="contentarea win-type-body">
+                    <div class="content-header">
+                        <div class="win-type-subtitle master-list-header">
+                            <span data-win-res="{textContent: 'registration.title'}"></span>
+                        </div>
+                    </div>
+                    <div class="headerFooterPlaceholder">
+                        <div class="list-header">
+                            <div class="list-landscape-only list-header-columns">
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.company'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.name'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.firstName'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.address'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.zip'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.city'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.country'}"></div>
+                                <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.phone'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.email'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.fair'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.activated'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.empID'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.capturedOn'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.password'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.message'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.captState'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.codeNr'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.newsletter'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.confirmed'}"></div>
+                                <div class="list-field-small-relative"
+                                     data-win-res="{textContent: 'registration.lastLogin'}"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="registrations-template"
+                         data-win-control="WinJS.Binding.Template" style="display: none">
+                        <div class="list-landscape-only">
+                            <div class="row-bkg-gray"
+                                 data-win-bind="style.display: index Binding.Converter.oddToDisplay"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Firmenname"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Nachname"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Vorname"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Strasse"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: PLZ"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Stadt"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Land"></div>
+                            <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Telefon"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: Email"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: Messe"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: Freischaltung"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: MitarbeiterID"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: ErfasstAm"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: Password"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: MessageText"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: ErfassungsStatus"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: CodeNr"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: Newsletterflag"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: RegistrierungBestaetigt"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
+                                 data-win-bind="textContent: ZuletztAngemeldet"></div>
+                        </div>
+                    </div>
+                    <div class="headerFooterPlaceholder">
+                        <div class="list-footer">
+                            <div class="status">
+                                <progress class="win-progress-bar progress"></progress>
+                                <div class="counter">
+                                    <span data-win-res="{textContent: 'registration.count'}"></span><span>: </span><span data-win-bind="textContent: count"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="registrations"
+                         class="listview win-selectionstylefilled"
+                         data-win-control="WinJS.UI.ListView"
+                         data-win-options="{
+                                itemTemplate: select('.registrations-template'),
+                                header: select('.list-header'),
+                                footer: select('.list-footer')
+                         }">
+                    </div>
+                    <div class="error-message"
+                         data-win-bind="style.display: error.displayErrorMsg; textContent: error.errorMsg"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

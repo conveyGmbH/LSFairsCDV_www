@@ -131,7 +131,7 @@
                     if (recordId) {
                         var curScope = that.scopeFromRecordId(that.curRecId);
                         if (curScope && curScope.item) {
-                            var confirmTitle = getResourceText("fairmanevent.labelDelete") + ": " + curScope.item.TITLE +
+                            var confirmTitle = getResourceText("fairmanevent.labelDelete") + ": " + curScope.item.Name +
                                 "\r\n" + getResourceText("fairmanevent.questionDelete");
                             confirm(confirmTitle, function (result) {
                                 if (result) {

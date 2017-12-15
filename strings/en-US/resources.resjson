@@ -366,7 +366,7 @@
     "label.fairtrade"		: "Trades",
     "label.fairdatasrc"		: "Data sources",
     "label.fairmantyp"		: "Client types",
-    "label.fairmandant"		: "Companies",
+    "label.fairmandant"		: "Fair client",
     "label.fairmanevent"	: "Events",	
     "label.fairlocation"	: "Locations",
 
@@ -483,7 +483,7 @@
     "fairdatasrc.labelDelete": "Fair data source",
     "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?",
    
-    "fairmandant.title"   : "Fair clients",
+    "fairmandant.title"   : "Fair client",
     "fairmandant.label"   : "Name",
     "fairmandant.labelDelete": "Fair client",
     "fairmandant.questionDelete": "Do you want to delete the current fair client?",
@@ -523,5 +523,28 @@
     "fairmanevent.endDate" : "End date",
     "fairmanevent.count"   : "Count",
     "fairmanevent.labelDelete": "Event",
-    "fairmanevent.questionDelete": "Do you want to delete the current event?"
+    "fairmanevent.questionDelete": "Do you want to delete the current event?",
+
+    "registration.title"	: "Registrations",
+    "registration.company"	: "Company",
+    "registration.name"	: "Name",
+    "registration.firstName"	: "First name",
+    "registration.address"	: "Address",
+    "registration.zip"	: "Zip",
+    "registration.city"	: "City",
+    "registration.country"	: "Country",
+    "registration.phone"	: "Telephone",
+    "registration.email"	: "Email",
+    "registration.fair"	: "Fair",
+    "registration.activated"	: "Activated",
+    "registration.empID"	: "MitarbeiterID",
+    "registration.capturedOn"	: "Captured on",
+    "registration.password"	: "Password",
+    "registration.message"	: "Message",
+    "registration.captState"	: "State of capture",
+    "registration.codeNr"	: "Code Nr",
+    "registration.Newsletter"	: "Newsletter",
+    "registration.confirmed"	: "Registration confirmed",
+    "registration.lastLogin"	: "Last login"
+
 }
