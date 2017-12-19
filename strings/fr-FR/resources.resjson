@@ -547,8 +547,9 @@
     "registration.message"	: "Message",
     "registration.captState"	: "Statut de la saisie",
     "registration.codeNr"	: "Code Nr",
-    "registration.Newsletter"	: "Newsletter",
+    "registration.newsletter"	: "Newsletter",
     "registration.confirmed"	: "Enregistrement confirmé",
-    "registration.lastLogin"	: "Activé dernier"
+    "registration.lastLogin"	: "Activé dernier",
+	"registration.count"	: "Nombre"
 
 }

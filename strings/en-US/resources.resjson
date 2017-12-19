@@ -543,8 +543,9 @@
     "registration.message"	: "Message",
     "registration.captState"	: "State of capture",
     "registration.codeNr"	: "Code Nr",
-    "registration.Newsletter"	: "Newsletter",
+    "registration.newsletter"	: "Newsletter",
     "registration.confirmed"	: "Registration confirmed",
-    "registration.lastLogin"	: "Last login"
+    "registration.lastLogin"	: "Last login",
+	"registration.count"	: "Count"
 
 }

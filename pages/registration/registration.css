@@ -1,5 +1,5 @@
 ﻿/*
-#registration .listview .win-selectionstylefilled {
+#registrations .listview .win-selectionstylefilled {
     position: relative;
     left: 0px;
     top: 0px;
@@ -7,12 +7,18 @@
     height: 200px;
 }
 */
-#registration .win-itemcontainer .win-itembox,
-#registration .win-listview .win-itembox {
+#registrations .win-itemcontainer .win-itembox,
+#registrations .win-listview .win-itembox {
     background-color: transparent;
 }
 
-#registration .listview {
+#registrations .list-header-columns {
+    background-color: transparent;
+    padding-left: 26px;
+    overflow-x: auto;
+}
+
+#registrations .listview {
     position: relative;
     left: 0;
     top: 0;
@@ -27,11 +33,11 @@
 .listView .registrationLayout .win-surface {
     margin-left: 0;
 }
-#registration .win-container {
+#registrations .win-container {
     margin: 0;
 }
 /*
-#registration .win-item {
+#registrations .win-item {
     padding: 4px 8px;
     width: calc(100% - 20px);
     border-style: solid;
@@ -39,14 +45,14 @@
     border-color: transparent;
 }
 */
-#registration .win-item {
+#registrations .win-item {
     width: calc(100% - 52px);
     padding-left: 26px;
     padding-right: 26px;
     padding-top: 2px;
     padding-bottom: 2px;
 }
- #registration .row-bkg{
+ #registrations .row-bkg{
      display:inline-block;
  }
 
@@ -61,24 +67,24 @@
 */
 
 /*
-.view-size-bigger #registration .row-bkg {
+.view-size-bigger #registrations .row-bkg {
     display: none;
 }
-.view-size-bigger #registration .win-container {
+.view-size-bigger #registrations .win-container {
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 16px;
 }
 */
-.view-size-bigger #registration .win-item {
+.view-size-bigger #registrations .win-item {
     width: calc(100% - 52px);
     padding-top: 8px;
     padding-bottom: 8px;
 }
-.view-size-bigger .action-image{
-    width: 100%;
-    float: left;
+
+.view-size-bigger #registrations .list-landscape-only {
+    display: inline;
 }
 
 /*
@@ -92,7 +98,7 @@
 */
 
 
-.view-size-medium #registration .win-item {
+.view-size-medium #registrations .win-item {
     width: calc(100% - 36px);
     padding-left: 18px;
     padding-right: 18px;
@@ -111,7 +117,7 @@
 */
 
 
-.view-size-small #registration .win-item {
+.view-size-small #registrations .win-item {
     width: calc(100% - 20px);
     padding-left: 10px;
     padding-right: 10px;

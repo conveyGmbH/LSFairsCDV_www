@@ -567,8 +567,9 @@
     "registration.message"	: "Nachricht",
     "registration.captState"	: "Erfassungsstatus",
     "registration.codeNr"	: "Code Nr",
-    "registration.Newsletter"	: "Newsletter",
+    "registration.newsletter"	: "Newsletter",
     "registration.confirmed"	: "Registrierung bestätigt",
-    "registration.lastLogin"	: "Zuletzt angemeldet"
+    "registration.lastLogin"	: "Zuletzt angemeldet",
+	"registration.count"	: "Anzahl"
 
 }
