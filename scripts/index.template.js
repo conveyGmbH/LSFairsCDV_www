@@ -66,9 +66,10 @@
         { id: "fairtrade", group: 2, disabled: false },
         { id: "fairdatasrc", group: 2, disabled: false },
         { id: "fairmantyp", group: 2, disabled: false },
+        { id: "fairlocation", group: 2, disabled: false },
+        { id: "registrations", group: -3, disabled: false },
         { id: "fairmandant", group: 4, disabled: false },
         { id: "fairmanevent", group: 4, disabled: false },
-        { id: "fairlocation", group: 2, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
         { id: "account", group: 8, disabled: false }
@@ -95,6 +96,8 @@
             id = "faircategory";
         } else if (id === "companies") {
             id = "fairmandant";
+        } else if (id === "registrations") {
+            id = "registration";
         }
         Log.ret(Log.l.trace);
         return id;
