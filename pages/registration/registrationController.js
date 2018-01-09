@@ -7,6 +7,7 @@
 /// <reference path="~/www/lib/convey/scripts/pageController.js" />
 /// <reference path="~/www/scripts/generalData.js" />
 /// <reference path="~/www/pages/registration/registrationService.js" />
+/// <reference path="~/www/pages/registration/exportXlsx.js" />
 
 (function () {
     "use strict";
@@ -15,7 +16,12 @@
         Controller: WinJS.Class.derive(Application.Controller, function Controller(pageElement, commandList) {
             Log.call(Log.l.trace, "Registration.Controller.");
             Application.Controller.apply(this, [pageElement, {
-                count: 0
+                count: 0,
+                progress: {
+                    percent: 0,
+                    text: "",
+                    show: null
+                }
             }, commandList]);
             this.nextUrl = null;
             this.loading = false;
@@ -77,6 +83,38 @@
                     (item.Email ? item.Email : "");
             }
             this.resultConverter = resultConverter;
+
+            var exportData = function () {
+                Log.call(Log.l.trace, "Registration.Controller.");
+                var dbViewTitle = null;
+                var restriction = {};
+                var dbView = Registration.registrationView;
+                var fileName = "Registrations";
+                //ExportXlsx.restriction = that.getRestriction();
+                if (dbView) {
+                    var exporter = ExportXlsx.exporter;
+                    if (!exporter) {
+                        exporter = new ExportXlsx.ExporterClass(that.binding.progress);
+                    }
+                    exporter.showProgress(0);
+                    WinJS.Promise.timeout(50).then(function () {
+                        exporter.saveXlsxFromView(dbView, fileName, function (result) {
+                            AppBar.busy = false;
+                            AppBar.triggerDisableHandlers();
+                        }, function (errorResponse) {
+                            AppData.setErrorMsg(that.binding, errorResponse);
+                            AppBar.busy = false;
+                            AppBar.triggerDisableHandlers();
+                        }, restriction, dbViewTitle);
+                    });
+                } else {
+                    AppBar.busy = false;
+                    AppBar.triggerDisableHandlers();
+                }
+                Log.ret(Log.l.trace);
+            }
+            that.exportData = exportData;
+
             
             // define handlers
             this.eventHandlers = {
@@ -90,6 +128,16 @@
                 clickForward: function (event) {
                     Log.call(Log.l.trace, "Registration.Controller.");
                     Application.navigateById("start", event);
+                    Log.ret(Log.l.trace);
+                },
+                clickExport: function(event) {
+                    Log.call(Log.l.trace, "Registration.Controller.");
+                    AppBar.busy = true;
+                    AppBar.triggerDisableHandlers();
+                    WinJS.Promise.timeout(0).then(function () {
+                        //that.templatecall();
+                        that.exportData();
+                    });
                     Log.ret(Log.l.trace);
                 },
                 /*onSelectionChanged: function (eventInfo) {
@@ -169,7 +217,7 @@
                         progress = listView.querySelector(".list-footer .progress");
                         counter = listView.querySelector(".list-footer .counter");
                         var visible = eventInfo.detail.visible;
-                        if (visible && that.contacts && that.nextUrl) {
+                        if (visible && that.registrations && that.nextUrl) {
                             that.loading = true;
                             if (progress && progress.style) {
                                 progress.style.display = "inline";
@@ -191,7 +239,7 @@
                                     var results = json.d.results;
                                     results.forEach(function (item, index) {
                                         that.resultConverter(item, that.binding.count);
-                                        that.binding.count = that.contacts.push(item);
+                                        that.binding.count = that.registrations.push(item);
                                     });
                                 }
                             }, function (errorResponse) {

@@ -50,7 +50,8 @@
             // add page specific commands to AppBar
             var commandList = [
                 { id: "clickBack", label: getResourceText("command.backward"), tooltip: getResourceText("tooltip.backward"), section: "primary", svg: "navigate_left" },
-                { id: "clickForward", label: getResourceText("command.search"), tooltip: getResourceText("tooltip.search"), section: "primary", svg: "magnifying_glass" }
+                { id: "clickForward", label: getResourceText("command.search"), tooltip: getResourceText("tooltip.search"), section: "primary", svg: "magnifying_glass" },
+                { id: "clickExport", label: getResourceText("command.export"), tooltip: getResourceText("tooltip.export"), section: "primary", svg: "folder_out" }
             ];
 
             this.controller = new Registration.Controller(element, commandList);

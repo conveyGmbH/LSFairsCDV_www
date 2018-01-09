@@ -11,7 +11,6 @@
         _registrationView: {
             get: function () {
                 var ret = AppData.getFormatView("Mitarbeiter_Anschrift", 20524, false);
-                ret.maxPageSize = 20;
                 return ret;
             }
         },
@@ -39,6 +38,9 @@
                 // this will return a promise to controller
                 Log.ret(Log.l.trace);
                 return ret;
+            },
+            getDbView: function () {
+                return Registration._registrationView;
             }
         }
     });

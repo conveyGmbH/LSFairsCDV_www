@@ -70,6 +70,7 @@
         { id: "registrations", group: -3, disabled: false },
         { id: "fairmandant", group: 4, disabled: false },
         { id: "fairmanevent", group: 4, disabled: false },
+        { id: "registrations", group: -5, disabled: false },
         { id: "info", group: 8, disabled: false },
         { id: "settings", group: 8, disabled: false },
         { id: "account", group: 8, disabled: false }
