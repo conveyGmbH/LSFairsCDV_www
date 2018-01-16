@@ -537,7 +537,7 @@
     "registration.email"	: "Email",
     "registration.fair"	: "Fair",
     "registration.activated"	: "Activated",
-    "registration.empID"	: "MitarbeiterID",
+    "registration.empID"	: "MVIEWID",
     "registration.capturedOn"	: "Captured On",
     "registration.password"	: "Password",
     "registration.message"	: "Message",

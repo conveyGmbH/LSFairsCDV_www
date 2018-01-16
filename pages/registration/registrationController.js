@@ -16,6 +16,23 @@
         Controller: WinJS.Class.derive(Application.Controller, function Controller(pageElement, commandList) {
             Log.call(Log.l.trace, "Registration.Controller.");
             Application.Controller.apply(this, [pageElement, {
+                restriction: {
+                    Mitarbeiter_AnschriftVIEWID: "",
+                    Firmenname: "",
+                    Vorname: "",
+                    Nachname: "",
+                    Strasse: "",
+                    PLZ: "",
+                    Stadt: "",
+                    INITLandID: "",
+                    Telefon: "",
+                    Email: "",
+                    Messe: "",
+                    Freischaltung: "",
+                    RegistrierungBestaetigt: "",
+                    ZuletztAngemeldet: ""
+                },
+                showFilter: false,
                 count: 0,
                 progress: {
                     percent: 0,
@@ -115,6 +132,13 @@
             }
             that.exportData = exportData;
 
+            var saveRestriction = function () {
+                var ret = WinJS.Promise.as().then(function () {
+                    
+                });
+                return ret;
+            }
+            that.saveRestriction = saveRestriction;
             
             // define handlers
             this.eventHandlers = {
@@ -130,14 +154,23 @@
                     Application.navigateById("start", event);
                     Log.ret(Log.l.trace);
                 },
+                clickFilter: function(event) {
+                    Log.call(Log.l.trace, "Registration.Controller");
+                    that.binding.showFilter = !that.binding.showFilter;
+                    Log.ret(Log.l.trace);
+                },
                 clickExport: function(event) {
                     Log.call(Log.l.trace, "Registration.Controller.");
                     AppBar.busy = true;
                     AppBar.triggerDisableHandlers();
                     WinJS.Promise.timeout(0).then(function () {
-                        //that.templatecall();
                         that.exportData();
                     });
+                    Log.ret(Log.l.trace);
+                },
+                clickReload: function(event) {
+                    Log.call(Log.l.trace, "Registration.Controller");
+                    that.loadData();
                     Log.ret(Log.l.trace);
                 },
                 /*onSelectionChanged: function (eventInfo) {
@@ -371,7 +404,7 @@
                             }
                             that.loading = false;
                         },
-                        {} //TODO restriction
+                        that.binding.restriction
                     );
                 });
                 Log.ret(Log.l.trace);

@@ -7,6 +7,12 @@
     height: 200px;
 }
 */
+
+#restrictions .win-type-subtitle {
+    left: 0;
+    padding-left: 26px;
+}
+
 #registrations .win-itemcontainer .win-itembox,
 #registrations .win-listview .win-itembox {
     background-color: transparent;
@@ -46,7 +52,6 @@
 }
 */
 #registrations .win-item {
-    width: calc(100% - 52px);
     padding-left: 26px;
     padding-right: 26px;
     padding-top: 2px;

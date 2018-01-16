@@ -541,7 +541,7 @@
     "registration.email"	: "Email",
     "registration.fair"	: "Foire",
     "registration.activated"	: "Déverrouillage",
-    "registration.empID"	: "MitarbeiterID",
+    "registration.empID"	: "MVIEWID",
     "registration.capturedOn"	: "Saisi en",
     "registration.password"	: "Mot de passe",
     "registration.message"	: "Message",

@@ -552,6 +552,8 @@
     "fairmanevent.questionDelete": "Wollen Sie diese Veranstaltung löschen?",
 
 	"registration.title"	: "Registrierungen",
+	"registration.filter"	: "Filter",
+	"registration.reload"	: "Filter anwenden",
     "registration.company"	: "Firma",
     "registration.name"	: "Name",
     "registration.firstName"	: "Vorname",
@@ -563,7 +565,7 @@
     "registration.email"	: "Email",
     "registration.fair"	: "Messe",
     "registration.activated"	: "Freischaltung",
-    "registration.empID"	: "MitarbeiterID",
+    "registration.empID"	: "MVIEWID",
     "registration.capturedOn"	: "Erfasst am",
     "registration.password"	: "Passwort",
     "registration.message"	: "Nachricht",

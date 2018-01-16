@@ -19,24 +19,97 @@
                         </div>
                     </div>
                     <div class="line-separator"></div>
-                    <div class="field_line"
+                    <div id ="progress" class="field_line" 
                          data-win-bind="style.display: progress.show Binding.Converter.toDisplay">
-                        <span class="label win-type-caption portrait_only"
-                              data-win-res="{textContent: 'reporting.progress'}"></span>
-                        <span class="label landscape_only"
-                              data-win-res="{textContent: 'reporting.progress'}"></span>
+                        <span class="label win-type-caption portrait_only" data-win-res="{textContent: 'reporting.progress'}"></span>
+                        <span class="label landscape_only" data-win-res="{textContent: 'reporting.progress'}"></span>
                         <progress class="progress_field win-progress-bar"
                                   data-win-bind="value: progress.percent"
                                   min="0" max="100"></progress>
                         <span class="large_field"
                               data-win-bind="textContent: progress.text"></span>
                     </div>
-                    <div class="line-separator"
-                         data-win-bind="style.display: progress.show Binding.Converter.toDisplay"></div>
+                    <div class="line-separator" data-win-bind="style.display: progress.show Binding.Converter.toDisplay"></div>
+                    
+                <div id="restrictions" data-win-bind="style.display: showFilter Binding.Converter.toDisplay">
+                    <div class="header-separator"></div>
+                    <div class="content-header">
+                        <div class="half-circle half-circle-textcolor">&nbsp;</div>
+                        <div class="content-header-line win-type-caption">
+                            <span class="id-field"></span>
+                            <span class="caption-field" data-win-res="{textContent: 'registration.filter'}"></span>
+                            <span class="date-field"></span>
+                        </div>
+                    </div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.empID'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Mitarbeiter_AnschriftVIEWID Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.company'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Firmenname Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.firstName'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Vorname Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.name'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Nachname Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.address'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Strasse Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.zip'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.PLZ Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.city'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Stadt Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.country'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.INITLandID Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.phone'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Telefon Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.email'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Email Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.fair'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Messe Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.activated'}"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.Freischaltung Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                    <div class="field_line field_line_odd">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.confirmed'}" style="width:200px"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.RegistrierungBestaetigt Binding.Mode.twoway"/>
+                    </div>
+                    <div class="field_line field_line_even">
+                        <span class="label win-type-caption portrait_only_left" data-win-res="{textContent: 'registration.lastLogin'}" style="width:200px"></span>
+                        <input class="input_field win-textbox" type="text" data-win-bind="value: restriction.ZuletztAngemeldet Binding.Mode.twoway"/>
+                    </div>
+                    <div class="line-separator"></div>
+                </div>
+
                     <div class="headerFooterPlaceholder">
                         <div class="list-header">
                             <div class="list-landscape-only list-header-columns">
-                                <div class="list-field-small-fixed"
+                                <div class="list-field-small-fixed" style="width:100px"
                                      data-win-res="{textContent: 'registration.empID'}"></div>
                                 <div class="list-field-small-fixed"
                                      data-win-res="{textContent: 'registration.company'}"></div>
@@ -50,7 +123,7 @@
                                      data-win-res="{textContent: 'registration.zip'}"></div>
                                 <div class="list-field-small-fixed"
                                      data-win-res="{textContent: 'registration.city'}"></div>
-                                <div class="list-field-small-fixed"
+                                <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.country'}"></div>
                                 <div class="list-field-small-fixed"
                                      data-win-res="{textContent: 'registration.phone'}"></div>
@@ -58,7 +131,7 @@
                                      data-win-res="{textContent: 'registration.email'}"></div>
                                 <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.fair'}"></div>
-                                <div class="list-field-small-fixed"
+                                <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.activated'}"></div>
                                 <!--div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.capturedOn'}"></div>
@@ -72,7 +145,7 @@
                                      data-win-res="{textContent: 'registration.codeNr'}"></div>
                                 <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.newsletter'}"></div-->
-                                <div class="list-field-small-fixed"
+                                <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.confirmed'}"></div>
                                 <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.lastLogin'}"></div>
@@ -86,7 +159,7 @@
                             <div class="row-bkg-gray"></div>
                             <div class="row-bkg-gray"
                                  data-win-bind="style.display: index Binding.Converter.oddToDisplay"></div>
-                            <div class="list-field-small-fixed win-type-ellipsis"
+                            <div class="list-field-small-fixed win-type-ellipsis" style="width: 100px"
                                  data-win-bind="textContent: Mitarbeiter_AnschriftVIEWID"></div>
                             <div class="list-field-small-fixed win-type-ellipsis"
                                  data-win-bind="textContent: Firmenname"></div>
@@ -100,7 +173,7 @@
                                  data-win-bind="textContent: PLZ"></div>
                             <div class="list-field-small-fixed win-type-ellipsis"
                                  data-win-bind="textContent: Stadt"></div>
-                            <div class="list-field-small-fixed win-type-ellipsis"
+                            <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Land"></div>
                             <div class="list-field-small-fixed win-type-ellipsis"
                                  data-win-bind="textContent: Telefon"></div>
@@ -108,7 +181,7 @@
                                  data-win-bind="textContent: Email"></div>
                             <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Messe"></div>
-                            <div class="list-field-small-fixed win-type-ellipsis"
+                            <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Freischaltung"></div>
                             <!--div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: ErfasstAm"></div>
@@ -122,7 +195,7 @@
                                  data-win-bind="textContent: CodeNr"></div>
                             <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Newsletterflag"></div-->
-                            <div class="list-field-small-fixed win-type-ellipsis"
+                            <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: RegistrierungBestaetigt"></div>
                             <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: ZuletztAngemeldet"></div>
