@@ -526,6 +526,8 @@
     "fairmanevent.questionDelete": "Do you want to delete the current event?",
 
     "registration.title"	: "Registrations",
+    "registration.filter"	: "Filtro",
+    "registration.reload"	: "Attivate filtro",
     "registration.company"	: "Company",
     "registration.name"	: "Name",
     "registration.firstName"	: "First name",

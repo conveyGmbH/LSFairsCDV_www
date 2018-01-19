@@ -104,10 +104,8 @@
             var exportData = function () {
                 Log.call(Log.l.trace, "Registration.Controller.");
                 var dbViewTitle = null;
-                var restriction = {};
                 var dbView = Registration.registrationView;
                 var fileName = "Registrations";
-                //ExportXlsx.restriction = that.getRestriction();
                 if (dbView) {
                     var exporter = ExportXlsx.exporter;
                     if (!exporter) {
@@ -122,7 +120,7 @@
                             AppData.setErrorMsg(that.binding, errorResponse);
                             AppBar.busy = false;
                             AppBar.triggerDisableHandlers();
-                        }, restriction, dbViewTitle);
+                        }, that.binding.restriction, dbViewTitle);
                     });
                 } else {
                     AppBar.busy = false;
@@ -131,14 +129,6 @@
                 Log.ret(Log.l.trace);
             }
             that.exportData = exportData;
-
-            var saveRestriction = function () {
-                var ret = WinJS.Promise.as().then(function () {
-                    
-                });
-                return ret;
-            }
-            that.saveRestriction = saveRestriction;
             
             // define handlers
             this.eventHandlers = {
