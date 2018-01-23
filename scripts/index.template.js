@@ -67,7 +67,6 @@
         { id: "fairdatasrc", group: 2, disabled: false },
         { id: "fairmantyp", group: 2, disabled: false },
         { id: "fairlocation", group: 2, disabled: false },
-        { id: "registrations", group: -3, disabled: false },
         { id: "fairmandant", group: 4, disabled: false },
         { id: "fairmanevent", group: 4, disabled: false },
         { id: "registrations", group: -5, disabled: false },

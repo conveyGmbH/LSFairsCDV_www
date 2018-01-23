@@ -1,4 +1,8 @@
-﻿#registrations .win-itemcontainer .win-itembox,
+﻿.filter {
+    height: 550px;
+}
+
+#registrations .win-itemcontainer .win-itembox,
 #registrations .win-listview .win-itembox {
     background-color: transparent;
 }

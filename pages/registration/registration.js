@@ -51,8 +51,8 @@
             var commandList = [
                 { id: "clickBack", label: getResourceText("command.backward"), tooltip: getResourceText("tooltip.backward"), section: "primary", svg: "navigate_left" },
                 { id: "clickFilter", label: getResourceText("registration.filter"), tooltip: getResourceText("registration.filter"), section: "primary", svg: "magnifying_glass" },
-                { id: "clickExport", label: getResourceText("command.export"), tooltip: getResourceText("tooltip.export"), section: "primary", svg: "folder_out" },
-                { id: "clickReload", label: getResourceText("registration.reload"), tooltip: getResourceText("registration.reload"), section: "primary", svg: "rotate_right" }
+                { id: "clickReload", label: getResourceText("registration.reload"), tooltip: getResourceText("registration.reload"), section: "primary", svg: "rotate_right" },
+                { id: "clickExport", label: getResourceText("command.export"), tooltip: getResourceText("tooltip.export"), section: "primary", svg: "folder_out" }
             ];
 
             this.controller = new Registration.Controller(element, commandList);
@@ -82,15 +82,11 @@
                     if (registrations && registrations.style) {
                         var contentarea = element.querySelector(".contentarea");
                         var contentheader = element.querySelector(".content-header");
-                        var progress = element.querySelector("#progress");
                         if (contentarea) {
                             var width = contentarea.clientWidth;
                             var height = contentarea.clientHeight - 8;
                             if (contentheader) {
                                 height = height - contentheader.clientHeight;
-                            }
-                            if (progress) {
-                                height = height - 80;
                             }
 
                             if (width !== that.prevWidth) {

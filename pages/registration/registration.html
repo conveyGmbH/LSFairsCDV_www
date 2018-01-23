@@ -31,7 +31,7 @@
                     </div>
                     <div class="line-separator" data-win-bind="style.display: progress.show Binding.Converter.toDisplay"></div>
                     
-                <div id="restrictions" data-win-bind="style.display: showFilter Binding.Converter.toDisplay">
+                <div id="restrictions" class="filter" data-win-bind="style.display: showFilter Binding.Converter.toDisplay">
                     <div class="header-separator"></div>
                     <div class="content-header">
                         <div class="half-circle half-circle-textcolor">&nbsp;</div>
@@ -123,7 +123,7 @@
                             <div class="list-landscape-only list-header-columns">
                                 <div class="list-field-small-fixed" style="width:100px"
                                      data-win-res="{textContent: 'registration.empID'}"></div>
-                                <div class="list-field-small-fixed"
+                                <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.company'}"></div>
                                 <div class="list-field-small-fixed"
                                      data-win-res="{textContent: 'registration.name'}"></div>
@@ -135,9 +135,9 @@
                                      data-win-res="{textContent: 'registration.zip'}"></div>
                                 <div class="list-field-small-fixed"
                                      data-win-res="{textContent: 'registration.city'}"></div>
-                                <div class="list-field-small-relative"
-                                     data-win-res="{textContent: 'registration.country'}"></div>
                                 <div class="list-field-small-fixed"
+                                     data-win-res="{textContent: 'registration.country'}"></div>
+                                <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.phone'}"></div>
                                 <div class="list-field-small-relative"
                                      data-win-res="{textContent: 'registration.email'}"></div>
@@ -173,7 +173,7 @@
                                  data-win-bind="style.display: index Binding.Converter.oddToDisplay"></div>
                             <div class="list-field-small-fixed win-type-ellipsis" style="width: 100px"
                                  data-win-bind="textContent: Mitarbeiter_AnschriftVIEWID"></div>
-                            <div class="list-field-small-fixed win-type-ellipsis"
+                            <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Firmenname"></div>
                             <div class="list-field-small-fixed win-type-ellipsis"
                                  data-win-bind="textContent: Nachname"></div>
@@ -185,9 +185,9 @@
                                  data-win-bind="textContent: PLZ"></div>
                             <div class="list-field-small-fixed win-type-ellipsis"
                                  data-win-bind="textContent: Stadt"></div>
-                            <div class="list-field-small-relative win-type-ellipsis"
-                                 data-win-bind="textContent: Land"></div>
                             <div class="list-field-small-fixed win-type-ellipsis"
+                                 data-win-bind="textContent: Land"></div>
+                            <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Telefon"></div>
                             <div class="list-field-small-relative win-type-ellipsis"
                                  data-win-bind="textContent: Email"></div>

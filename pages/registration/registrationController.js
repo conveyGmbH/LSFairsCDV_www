@@ -147,6 +147,32 @@
                 clickFilter: function(event) {
                     Log.call(Log.l.trace, "Registration.Controller");
                     that.binding.showFilter = !that.binding.showFilter;
+                    WinJS.Promise.timeout(0).then(function () {
+                        var registrations = pageElement.querySelector("#registrations.listview");
+                        if (registrations && registrations.style) {
+                            var filter = pageElement.querySelector("#restrictions");
+                            var contentarea = pageElement.querySelector(".contentarea");
+                            var contentheader = pageElement.querySelector(".content-header");
+                            var progressbar = pageElement.querySelector("#progress");
+                            if (contentarea) {
+                                var height = contentarea.clientHeight;
+                                if (contentheader) {
+                                    height = height - contentheader.clientHeight;
+                                }
+                                if (progressbar) {
+                                    if (that.binding.progress.show) {
+                                        height = height - progressbar.clientHeight - 5;
+                                    }
+                                }
+                                if (filter) {
+                                    if (that.binding.showFilter) {
+                                        height = height - filter.clientHeight;
+                                    }
+                                }
+                                registrations.style.height = height.toString() + "px";
+                            }
+                        }
+                    });
                     Log.ret(Log.l.trace);
                 },
                 clickExport: function(event) {
@@ -155,6 +181,29 @@
                     AppBar.triggerDisableHandlers();
                     WinJS.Promise.timeout(0).then(function () {
                         that.exportData();
+                    }).then(function () {
+                        var registrations = pageElement.querySelector("#registrations.listview");
+                        if (registrations && registrations.style) {
+                            var contentarea = pageElement.querySelector(".contentarea");
+                            var contentheader = pageElement.querySelector(".content-header");
+                            var progressbar = pageElement.querySelector("#progress");
+                            var filter = pageElement.querySelector("#restrictions");
+                            if (contentarea) {
+                                var height = contentarea.clientHeight;
+                                if (contentheader) {
+                                    height = height - contentheader.clientHeight;
+                                }
+                                if (progressbar) {
+                                    height = height - 80;
+                                }
+                                if (filter) {
+                                    if (that.binding.showFilter) {
+                                        height = height - filter.clientHeight;
+                                    }
+                                }
+                                registrations.style.height = height.toString() + "px";
+                            }
+                        }
                     });
                     Log.ret(Log.l.trace);
                 },
