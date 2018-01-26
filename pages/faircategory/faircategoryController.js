@@ -48,7 +48,7 @@
                         if (fields && fields.length >= 3) {
                             ret["TITLE"] = fields[0].value;
                             ret["Bezeichnung"] = fields[1].value;
-                            ret["AUMADaten"] = fields[3].value;
+                            ret["AUMADaten"] = fields[2].value;
                         }
                     }
                 }

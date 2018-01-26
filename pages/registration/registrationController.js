@@ -29,6 +29,12 @@
                     Email: "",
                     Messe: "",
                     Freischaltung: "",
+                    ErfasstAm: "",
+                    Password: "",
+                    MessageText: "",
+                    ErfassungsStatus: "",
+                    CodeNr: "",
+                    Newsletterflag: "",
                     RegistrierungBestaetigt: "",
                     ZuletztAngemeldet: ""
                 },

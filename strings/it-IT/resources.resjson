@@ -46,6 +46,7 @@
     "tooltip.deleteQuestiongroup": "Elimina Gruppo domande",
     "tooltip.deleteQuestions/Answers" :   "Elimina Domande/Risposte",
     "tooltip.createNewContact"           : "Aggiungi nuovo contatto",
+    "tooltip.new"			: "Aggiungere record",
     "tooltip.newSkill"      : "Aggiungere nuova Ruolo",
     "tooltip.newQuestions/Answers" : "Aggiungere nuova Domande/Risposte",
     "tooltip.newQuestiongroup" : "Aggiungere nuova Gruppo domande",
@@ -482,6 +483,12 @@
     "fairdatasrc.count"   : "Count",
     "fairdatasrc.labelDelete": "Fair data source",
     "fairdatasrc.questionDelete": "Do you want to delete the current fair data source?",
+
+    "fairmantyp.title"   : "Client types",
+    "fairmantyp.label"   : "Name",
+    "fairmantyp.count"   : "Count",
+    "fairmantyp.labelDelete": "Client type",
+    "fairmantyp.questionDelete": "Do you want to delete the current client type?",
    
     "fairmandant.title"   : "Fair client",
     "fairmandant.label"   : "Name",

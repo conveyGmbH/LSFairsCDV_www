@@ -1,4 +1,4 @@
-﻿// controller for page: info
+﻿// controller for page: fairmantyp
 /// <reference path="~/www/lib/WinJS/scripts/base.js" />
 /// <reference path="~/www/lib/WinJS/scripts/ui.js" />
 /// <reference path="~/www/lib/convey/scripts/appSettings.js" />
@@ -45,7 +45,9 @@
                     var element = listView.winControl.elementFromIndex(index);
                     if (element) {
                         var fields = element.querySelectorAll('input[type="text"]');
-                        ret["TITLE"] = fields[0].value;
+                        if (fields) {
+                            ret["TITLE"] = fields[0].value;
+                        }
                     }
                 }
                 Log.ret(Log.l.trace, ret);

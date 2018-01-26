@@ -45,9 +45,9 @@
                     var element = listView.winControl.elementFromIndex(index);
                     if (element) {
                         var fields = element.querySelectorAll('input[type="text"]');
-                        if (fields && fields.length >= 2) {
+                        if (fields && fields.length >= 1) {
                             ret["TITLE"] = fields[0].value;
-                            ret["TimeZoneAdjustment"] = fields[1].value;
+                            //ret["TimeZoneAdjustment"] = fields[1].value;
                         }
                     }
                 }
