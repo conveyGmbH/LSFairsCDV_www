@@ -1,25 +1,33 @@
 ﻿.filter {
-    height: 550px;
+    height: 250px;
+    max-height: 50%;
+    overflow: auto;
 }
 
-#registrations .win-itemcontainer .win-itembox,
+#restrictions .checkboxfield {
+    width: 180px;
+    padding-left: 26px;
+}
+
+#restrictions .checkboxlabel {
+    padding-bottom: 12px;
+}
+
+
+#registrations .win-itemscontainer .win-itembox,
 #registrations .win-listview .win-itembox {
     background-color: transparent;
+    overflow-x: auto;
 }
 
 #registrations .list-header-columns {
     background-color: transparent;
+    width: calc(100% - 26px);
     padding-left: 26px;
-    overflow-x: auto;
 }
 
-#registrations .listview {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: calc(100% - 56px);
-    overflow: scroll;
+#registrations .list-header {
+    overflow-x: auto;
 }
 
 /* Styles used for the custom layout */
@@ -42,8 +50,8 @@
 }
 */
 #registrations .win-item {
+    width: calc(100% - 26px);
     padding-left: 26px;
-    padding-right: 26px;
     padding-top: 2px;
     padding-bottom: 2px;
 }
@@ -73,13 +81,15 @@
 }
 */
 .view-size-bigger #registrations .win-item {
-    width: calc(100% - 52px);
+    width: calc(100% - 26px);
+    padding-left: 26px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
 .view-size-bigger #registrations .list-landscape-only {
     display: inline;
+    overflow-x: auto;
 }
 
 /*
@@ -94,9 +104,8 @@
 
 
 .view-size-medium #registrations .win-item {
-    width: calc(100% - 36px);
+    width: calc(100% - 18px);
     padding-left: 18px;
-    padding-right: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
@@ -113,9 +122,8 @@
 
 
 .view-size-small #registrations .win-item {
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     padding-left: 10px;
-    padding-right: 10px;
     padding-top: 4px;
     padding-bottom: 4px;
 }

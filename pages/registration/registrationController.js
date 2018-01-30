@@ -17,25 +17,20 @@
             Log.call(Log.l.trace, "Registration.Controller.");
             Application.Controller.apply(this, [pageElement, {
                 restriction: {
-                    Mitarbeiter_AnschriftVIEWID: "",
+                    registered: false,
+                    logged: false,
+                    problem: false,
                     Firmenname: "",
-                    Vorname: "",
-                    Nachname: "",
-                    Strasse: "",
-                    PLZ: "",
-                    Stadt: "",
+                    fullName: "",
                     INITLandID: "",
                     Telefon: "",
                     Email: "",
                     Messe: "",
-                    Freischaltung: "",
-                    ErfasstAm: "",
-                    Password: "",
                     MessageText: "",
-                    ErfassungsStatus: "",
                     CodeNr: "",
-                    Newsletterflag: "",
-                    RegistrierungBestaetigt: "",
+                    ErfassungTS: "",
+                    ErfassungsStatus: "",
+                    RegistrierungBestaetigtTS: "",
                     ZuletztAngemeldet: ""
                 },
                 showFilter: false,
@@ -104,6 +99,9 @@
                     (item.Land ? (item.Land + "\r\n") : "") +
                     (item.Telefon ? (item.Telefon + "\r\n") : "") +
                     (item.Email ? item.Email : "");
+                if (item.CodeNr === null) {
+                    item.CodeNr = item.MessageText;
+                }
             }
             this.resultConverter = resultConverter;
 
@@ -371,6 +369,10 @@
                     that.registrations.length = 0;
                 }
                 AppData.setErrorMsg(that.binding);
+                //complete restriction
+                that.binding.restriction.RegistrierungBestaetigtTS = that.binding.restriction.registered ? "NOT NULL" : "";
+                that.binding.restriction.ZuletztAngemeldet = that.binding.restriction.logged ? "NOT NULL" : "";
+                that.binding.restriction.MessageText = that.binding.restriction.problem ? "NOT NULL" : "";
                 var ret = new WinJS.Promise.as().then(function() {
                     if (!AppData.initLandView.getResults().length) {
                         Log.print(Log.l.trace, "calling select initLandData...");

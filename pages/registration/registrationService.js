@@ -19,7 +19,7 @@
                 Log.call(Log.l.trace, "Registration.");
                 var ret = Registration._registrationView.select(complete, error, restriction, {
                     ordered: true,
-                    orderAttribute: "RegistrierungBestaetigt",
+                    orderAttribute: "Mitarbeiter_AnschriftVIEWID",
                     desc: true
                 });
                 // this will return a promise to controller
