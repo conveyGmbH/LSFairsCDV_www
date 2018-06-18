@@ -349,7 +349,7 @@ section[role=main] {
     width: calc(100% - 200px);
     */
     width: 100%;
-    height: 12px;
+    min-height: 12px;
     vertical-align: top;
     text-align: center;
     text-transform: uppercase;
@@ -457,11 +457,18 @@ select {
     width: calc(100% - 4px);
     min-width: calc(100% - 4px);
 }
-
+.input_field_noLabel {
+    float:left;
+    width: calc(100% - 4px);
+    min-width: calc(100% - 0px);
+    min-height: 32px;
+    margin-top: 0;
+    margin-left: 0;
+}
 .input_field {
     float:left;
     width: calc(100% - 4px);
-    min-width: calc(100% - 4px);
+    min-width: calc(100% - 0px);
     min-height: 32px; 
 }
 .large_field {
@@ -471,7 +478,7 @@ select {
 }
 .input_group {
     float:left;
-    width: calc(100% - 4px);
+    width: 100% /*width: calc(100% - 4px)*/;
     margin-top: 0;
     margin-bottom: -4px;
     margin-left: 0;
@@ -554,6 +561,9 @@ select {
 span.input_field, span.input_small_right, span.large_field, span.input_small_left {
     padding-left: 0;
 }
+span.radio, span.checkbox {
+    display: flex;
+}
 */
 select.input_field, select.input_small_left{
     height: 32px;
@@ -596,7 +606,7 @@ input.win-textbox, input.win-checkbox, input.win-radio, textarea.win-textarea, s
 }
 .input_half_right {
     min-height: 32px;
-    margin-right: -2px;
+    margin-right: 0px; /*-2*/
     float: right;
     width: 50%;
    /* margin-left: 1em;*/
@@ -852,11 +862,6 @@ input.win-textbox, input.win-checkbox, input.win-radio, textarea.win-textarea, s
     left: 18px;
     width: calc(100% - 18px);
 }
-.view-size-medium .contentarea {
-    /*
-    width: calc(100% - 32px);
-    */
-}
 .view-size-medium .row-separator {
     margin-top: -8px;
     margin-left: -18px;
@@ -874,6 +879,10 @@ input.win-textbox, input.win-checkbox, input.win-radio, textarea.win-textarea, s
     width: calc(100% - 124px);
     min-width: calc(100% - 124px);
     margin-right: 16px;
+}
+.view-size-medium .input_field_noLabel {
+    float: right;
+    width: calc(100% - 124px);
 }
 .view-size-medium .input_field {
     float: right;
@@ -1158,5 +1167,3 @@ input.win-textbox, input.win-checkbox, input.win-radio, textarea.win-textarea, s
 .lightthemeMandatory:focus {
     background-color: lightyellow;
 }
-
-
